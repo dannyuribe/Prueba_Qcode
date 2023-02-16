@@ -10,10 +10,6 @@ namespace AccesoDatos.Modelos
 {
     public class Diagnostico
     {
-        public Diagnostico()
-        {
-            Empleado = new HashSet<Empleado>();
-        }
         public long IdDiagnostico { get; set; }
         public long IdReparacion { get; set; }
         public string IdEmpleado { get; set; }
