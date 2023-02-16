@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33122.133
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Prueba_Qcode", "Prueba_Qcode\Prueba_Qcode.csproj", "{702E27CD-AB96-4ACB-BDAC-51542CAE33F2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Prueba_Qcode", "Prueba_Qcode\Prueba_Qcode.csproj", "{702E27CD-AB96-4ACB-BDAC-51542CAE33F2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "data", "data\data.csproj", "{44911683-2341-45FA-921C-B804D0BD4D7F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AccesoDatos", "data\AccesoDatos.csproj", "{44911683-2341-45FA-921C-B804D0BD4D7F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

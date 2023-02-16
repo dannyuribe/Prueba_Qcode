@@ -1,15 +1,15 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Repositorios\\Qcode\\Prueba_Qcode\\data\\data.csproj": {}
+    "C:\\Repositorios\\Qcode\\Prueba_Qcode\\data\\AccesoDatos.csproj": {}
   },
   "projects": {
-    "C:\\Repositorios\\Qcode\\Prueba_Qcode\\data\\data.csproj": {
+    "C:\\Repositorios\\Qcode\\Prueba_Qcode\\data\\AccesoDatos.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Repositorios\\Qcode\\Prueba_Qcode\\data\\data.csproj",
-        "projectName": "data",
-        "projectPath": "C:\\Repositorios\\Qcode\\Prueba_Qcode\\data\\data.csproj",
+        "projectUniqueName": "C:\\Repositorios\\Qcode\\Prueba_Qcode\\data\\AccesoDatos.csproj",
+        "projectName": "AccesoDatos",
+        "projectPath": "C:\\Repositorios\\Qcode\\Prueba_Qcode\\data\\AccesoDatos.csproj",
         "packagesPath": "C:\\Users\\Atkasky\\.nuget\\packages\\",
         "outputPath": "C:\\Repositorios\\Qcode\\Prueba_Qcode\\data\\obj\\",
         "projectStyle": "PackageReference",
@@ -48,9 +48,25 @@
               "target": "Package",
               "version": "[2.0.78, )"
             },
+            "EntityFramework": {
+              "target": "Package",
+              "version": "[6.4.4, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[7.0.3, )"
+            },
             "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.3, )"
+            },
+            "Microsoft.Extensions.Localization": {
+              "target": "Package",
+              "version": "[7.0.3, )"
+            },
+            "Microsoft.Extensions.Localization.Abstractions": {
               "target": "Package",
               "version": "[7.0.3, )"
             },

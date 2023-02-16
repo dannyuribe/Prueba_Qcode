@@ -4,12 +4,12 @@
     "C:\\Repositorios\\Qcode\\Prueba_Qcode\\Prueba_Qcode\\Prueba_Qcode.csproj": {}
   },
   "projects": {
-    "C:\\Repositorios\\Qcode\\Prueba_Qcode\\data\\data.csproj": {
+    "C:\\Repositorios\\Qcode\\Prueba_Qcode\\data\\AccesoDatos.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Repositorios\\Qcode\\Prueba_Qcode\\data\\data.csproj",
-        "projectName": "data",
-        "projectPath": "C:\\Repositorios\\Qcode\\Prueba_Qcode\\data\\data.csproj",
+        "projectUniqueName": "C:\\Repositorios\\Qcode\\Prueba_Qcode\\data\\AccesoDatos.csproj",
+        "projectName": "AccesoDatos",
+        "projectPath": "C:\\Repositorios\\Qcode\\Prueba_Qcode\\data\\AccesoDatos.csproj",
         "packagesPath": "C:\\Users\\Atkasky\\.nuget\\packages\\",
         "outputPath": "C:\\Repositorios\\Qcode\\Prueba_Qcode\\data\\obj\\",
         "projectStyle": "PackageReference",
@@ -48,9 +48,21 @@
               "target": "Package",
               "version": "[2.0.78, )"
             },
+            "EntityFramework": {
+              "target": "Package",
+              "version": "[6.4.4, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[7.0.3, )"
+            },
             "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.3, )"
+            },
+            "Microsoft.Extensions.Localization.Abstractions": {
               "target": "Package",
               "version": "[7.0.3, )"
             },
@@ -103,8 +115,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Repositorios\\Qcode\\Prueba_Qcode\\data\\data.csproj": {
-                "projectPath": "C:\\Repositorios\\Qcode\\Prueba_Qcode\\data\\data.csproj"
+              "C:\\Repositorios\\Qcode\\Prueba_Qcode\\data\\AccesoDatos.csproj": {
+                "projectPath": "C:\\Repositorios\\Qcode\\Prueba_Qcode\\data\\AccesoDatos.csproj"
               }
             }
           }
