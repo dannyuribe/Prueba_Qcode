@@ -62,17 +62,13 @@
               "target": "Package",
               "version": "[7.0.3, )"
             },
-            "Microsoft.Extensions.Localization": {
-              "target": "Package",
-              "version": "[7.0.3, )"
-            },
-            "Microsoft.Extensions.Localization.Abstractions": {
-              "target": "Package",
-              "version": "[7.0.3, )"
-            },
             "MySql.Data": {
               "target": "Package",
               "version": "[8.0.32, )"
+            },
+            "MySql.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[7.0.0, )"
             }
           },
           "imports": [

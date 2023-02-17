@@ -1,0 +1,5 @@
+C:\Repositorios\Qcode\Prueba_Qcode\data\obj\Debug\net6.0\AccesoDatos.csproj.AssemblyReference.cache
+C:\Repositorios\Qcode\Prueba_Qcode\data\obj\Debug\net6.0\AccesoDatos.GeneratedMSBuildEditorConfig.editorconfig
+C:\Repositorios\Qcode\Prueba_Qcode\data\obj\Debug\net6.0\AccesoDatos.AssemblyInfoInputs.cache
+C:\Repositorios\Qcode\Prueba_Qcode\data\obj\Debug\net6.0\AccesoDatos.AssemblyInfo.cs
+C:\Repositorios\Qcode\Prueba_Qcode\data\obj\Debug\net6.0\AccesoDatos.csproj.CoreCompileInputs.cache

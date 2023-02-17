@@ -16,9 +16,8 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="Microsoft.Extensions.Localization" Version="7.0.3" />
-    <PackageReference Include="Microsoft.Extensions.Localization.Abstractions" Version="7.0.3" />
     <PackageReference Include="MySql.Data" Version="8.0.32" />
+    <PackageReference Include="MySql.EntityFrameworkCore" Version="7.0.0" />
   </ItemGroup>
 
   <ItemGroup>

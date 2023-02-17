@@ -20,7 +20,6 @@ namespace AccesoDatos.Modelos
         
         public DateTime FechaIngreso { get; set; }
         public DateTime FechaSalida { get; set; }
-        public DateTime FechaModifica { get; set; }
         [Computed]
         [JsonIgnore]
         public virtual Vehiculo Vehiculo { get; set; }

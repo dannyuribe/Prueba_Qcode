@@ -16,7 +16,6 @@ namespace AccesoDatos.Modelos
         public string Usuario { get; set;}
         public string Contrasena { get; set;}
         public DateTime FechaCrea { get; set;}
-        public DateTime FechaModifica { get; set; }
         [Computed]
         [JsonIgnore]
         public virtual ICollection<Diagnostico> Diagnosticos { get; set; }

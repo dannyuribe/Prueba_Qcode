@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "0Uto8HTiya4rzk42kZehQE+FlvruDnghIXKThBe4Cs7gluAr7Dk2uVl3tqwCp0hjZvXG0sUgjU0+dxUTGlYqrQ==",
+  "dgSpecHash": "Vm+lx2vq6xonxWaaH6mza/dbLTXKyjt7IDQJa2JJG71EE6MX3VZvcfxsOUopCkFrgLYVE5aCU/sH5H1/5/r/ow==",
   "success": true,
   "projectFilePath": "C:\\Repositorios\\Qcode\\Prueba_Qcode\\data\\AccesoDatos.csproj",
   "expectedPackageFiles": [
@@ -25,11 +25,9 @@
     "C:\\Users\\Atkasky\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\7.0.0\\microsoft.extensions.dependencyinjection.7.0.0.nupkg.sha512",
     "C:\\Users\\Atkasky\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\7.0.0\\microsoft.extensions.dependencyinjection.abstractions.7.0.0.nupkg.sha512",
     "C:\\Users\\Atkasky\\.nuget\\packages\\microsoft.extensions.dependencymodel\\7.0.0\\microsoft.extensions.dependencymodel.7.0.0.nupkg.sha512",
-    "C:\\Users\\Atkasky\\.nuget\\packages\\microsoft.extensions.localization\\7.0.3\\microsoft.extensions.localization.7.0.3.nupkg.sha512",
-    "C:\\Users\\Atkasky\\.nuget\\packages\\microsoft.extensions.localization.abstractions\\7.0.3\\microsoft.extensions.localization.abstractions.7.0.3.nupkg.sha512",
     "C:\\Users\\Atkasky\\.nuget\\packages\\microsoft.extensions.logging\\7.0.0\\microsoft.extensions.logging.7.0.0.nupkg.sha512",
     "C:\\Users\\Atkasky\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\7.0.0\\microsoft.extensions.logging.abstractions.7.0.0.nupkg.sha512",
-    "C:\\Users\\Atkasky\\.nuget\\packages\\microsoft.extensions.options\\7.0.1\\microsoft.extensions.options.7.0.1.nupkg.sha512",
+    "C:\\Users\\Atkasky\\.nuget\\packages\\microsoft.extensions.options\\7.0.0\\microsoft.extensions.options.7.0.0.nupkg.sha512",
     "C:\\Users\\Atkasky\\.nuget\\packages\\microsoft.extensions.primitives\\7.0.0\\microsoft.extensions.primitives.7.0.0.nupkg.sha512",
     "C:\\Users\\Atkasky\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
     "C:\\Users\\Atkasky\\.nuget\\packages\\microsoft.netcore.targets\\1.1.0\\microsoft.netcore.targets.1.1.0.nupkg.sha512",
@@ -37,6 +35,7 @@
     "C:\\Users\\Atkasky\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",
     "C:\\Users\\Atkasky\\.nuget\\packages\\mono.texttemplating\\2.2.1\\mono.texttemplating.2.2.1.nupkg.sha512",
     "C:\\Users\\Atkasky\\.nuget\\packages\\mysql.data\\8.0.32\\mysql.data.8.0.32.nupkg.sha512",
+    "C:\\Users\\Atkasky\\.nuget\\packages\\mysql.entityframeworkcore\\7.0.0\\mysql.entityframeworkcore.7.0.0.nupkg.sha512",
     "C:\\Users\\Atkasky\\.nuget\\packages\\portable.bouncycastle\\1.9.0\\portable.bouncycastle.1.9.0.nupkg.sha512",
     "C:\\Users\\Atkasky\\.nuget\\packages\\runtime.native.system.data.sqlclient.sni\\4.7.0\\runtime.native.system.data.sqlclient.sni.4.7.0.nupkg.sha512",
     "C:\\Users\\Atkasky\\.nuget\\packages\\runtime.win-arm64.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-arm64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
