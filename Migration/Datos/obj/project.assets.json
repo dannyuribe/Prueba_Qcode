@@ -2509,9 +2509,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Repositorios\\Qcode\\Migration\\Datos\\Datos.csproj",
-      "projectName": "Datos",
-      "projectPath": "C:\\Repositorios\\Qcode\\Migration\\Datos\\Datos.csproj",
+      "projectUniqueName": "C:\\Repositorios\\Qcode\\Migration\\Datos\\Migration.Datos.csproj",
+      "projectName": "Migration.Datos",
+      "projectPath": "C:\\Repositorios\\Qcode\\Migration\\Datos\\Migration.Datos.csproj",
       "packagesPath": "C:\\Users\\Atkasky\\.nuget\\packages\\",
       "outputPath": "C:\\Repositorios\\Qcode\\Migration\\Datos\\obj\\",
       "projectStyle": "PackageReference",

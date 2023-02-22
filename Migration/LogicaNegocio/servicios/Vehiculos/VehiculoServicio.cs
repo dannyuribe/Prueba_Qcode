@@ -1,27 +1,29 @@
-﻿using System;
+﻿using Qcode.BusinessLogic.Interfaces;
+using Qcode.Datos.Modelos;
+using Qcode.Datos.repositorio.Generico;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using AccesoDatos.Modelos;
-using Datos.Contexto;
-using Datos.repositorio.Vehiculos;
 
-namespace LogicaNegocio.servicios.Vehiculos
+
+namespace Qcode.BusinessLogic.servicios.Vehiculos
 {
-    public class VehiculoServicio
+    public class VehiculoServicio:IVehiculoServicio
     {
-        private readonly VehiculoRepositorio _vehiculoRepositorio;
+        private readonly RepositorioGenerico<Vehiculo> _repositorioVehiculo;
 
-        public VehiculoServicio()
+        public VehiculoServicio(RepositorioGenerico<Vehiculo> repositorioVehiculo)
         {
-            _vehiculoRepositorio = new VehiculoRepositorio();
+            _repositorioVehiculo = repositorioVehiculo;
         }
 
 
-        public Task<Vehiculo> ObtenerPorSerialVehiculo(string serialVehiculo)
+        public async Task<Vehiculo> ObtenerVehiculoPorSerial(string serialVehiculo)
         {
-            return _vehiculoRepositorio.ObtenerVehiculo(serialVehiculo);
+            Vehiculo vehiculo = await _repositorioVehiculo.ObtenerPorId(serialVehiculo);
+            return vehiculo;
         }
     }
 }

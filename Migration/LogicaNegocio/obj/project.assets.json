@@ -64,11 +64,11 @@
           }
         }
       },
-      "Microsoft.EntityFrameworkCore/7.0.0": {
+      "Microsoft.EntityFrameworkCore/7.0.3": {
         "type": "package",
         "dependencies": {
-          "Microsoft.EntityFrameworkCore.Abstractions": "7.0.0",
-          "Microsoft.EntityFrameworkCore.Analyzers": "7.0.0",
+          "Microsoft.EntityFrameworkCore.Abstractions": "7.0.3",
+          "Microsoft.EntityFrameworkCore.Analyzers": "7.0.3",
           "Microsoft.Extensions.Caching.Memory": "7.0.0",
           "Microsoft.Extensions.DependencyInjection": "7.0.0",
           "Microsoft.Extensions.Logging": "7.0.0"
@@ -87,7 +87,7 @@
           "buildTransitive/net6.0/Microsoft.EntityFrameworkCore.props": {}
         }
       },
-      "Microsoft.EntityFrameworkCore.Abstractions/7.0.0": {
+      "Microsoft.EntityFrameworkCore.Abstractions/7.0.3": {
         "type": "package",
         "compile": {
           "lib/net6.0/Microsoft.EntityFrameworkCore.Abstractions.dll": {
@@ -100,7 +100,7 @@
           }
         }
       },
-      "Microsoft.EntityFrameworkCore.Analyzers/7.0.0": {
+      "Microsoft.EntityFrameworkCore.Analyzers/7.0.3": {
         "type": "package",
         "compile": {
           "lib/netstandard2.0/_._": {}
@@ -698,17 +698,30 @@
           }
         }
       },
-      "Datos/1.0.0": {
+      "Migration.Datos/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
           "MySql.EntityFrameworkCore": "7.0.0"
         },
         "compile": {
-          "bin/placeholder/Datos.dll": {}
+          "bin/placeholder/Migration.Datos.dll": {}
         },
         "runtime": {
-          "bin/placeholder/Datos.dll": {}
+          "bin/placeholder/Migration.Datos.dll": {}
+        }
+      },
+      "Qcode.Datos/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "MySql.EntityFrameworkCore": "7.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Qcode.Datos.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Qcode.Datos.dll": {}
         }
       }
     }
@@ -796,10 +809,10 @@
         "lib/netstandard2.0/K4os.Hash.xxHash.xml"
       ]
     },
-    "Microsoft.EntityFrameworkCore/7.0.0": {
-      "sha512": "9W+IfmAzMrp2ZpKZLhgTlWljSBM9Erldis1us61DAGi+L7Q6vilTbe1G2zDxtYO8F2H0I0Qnupdx5Cp4s2xoZw==",
+    "Microsoft.EntityFrameworkCore/7.0.3": {
+      "sha512": "6XUI2YGoaLMoP9KGaqWmmd4B2n5bpQbXrVRpH20Et3YjQ0Rn3Ia6HM/ANcSq9rBfjfUySgo9SwUZgQ4m4PF3LQ==",
       "type": "package",
-      "path": "microsoft.entityframeworkcore/7.0.0",
+      "path": "microsoft.entityframeworkcore/7.0.3",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -807,35 +820,35 @@
         "buildTransitive/net6.0/Microsoft.EntityFrameworkCore.props",
         "lib/net6.0/Microsoft.EntityFrameworkCore.dll",
         "lib/net6.0/Microsoft.EntityFrameworkCore.xml",
-        "microsoft.entityframeworkcore.7.0.0.nupkg.sha512",
+        "microsoft.entityframeworkcore.7.0.3.nupkg.sha512",
         "microsoft.entityframeworkcore.nuspec"
       ]
     },
-    "Microsoft.EntityFrameworkCore.Abstractions/7.0.0": {
-      "sha512": "Pfu3Zjj5+d2Gt27oE9dpGiF/VobBB+s5ogrfI9sBsXQE1SG49RqVz5+IyeNnzhyejFrPIQsPDRMchhcojy4Hbw==",
+    "Microsoft.EntityFrameworkCore.Abstractions/7.0.3": {
+      "sha512": "0NaFBZykUlQHknddRuKY4v+MFZX/AW+v2V85dgj7abIlt+kL3GWa7QNH5S1084VLf1u+dq1SnhZsOvykc3Y0sA==",
       "type": "package",
-      "path": "microsoft.entityframeworkcore.abstractions/7.0.0",
+      "path": "microsoft.entityframeworkcore.abstractions/7.0.3",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Icon.png",
         "lib/net6.0/Microsoft.EntityFrameworkCore.Abstractions.dll",
         "lib/net6.0/Microsoft.EntityFrameworkCore.Abstractions.xml",
-        "microsoft.entityframeworkcore.abstractions.7.0.0.nupkg.sha512",
+        "microsoft.entityframeworkcore.abstractions.7.0.3.nupkg.sha512",
         "microsoft.entityframeworkcore.abstractions.nuspec"
       ]
     },
-    "Microsoft.EntityFrameworkCore.Analyzers/7.0.0": {
-      "sha512": "Qkd2H+jLe37o5ku+LjT6qf7kAHY75Yfn2bBDQgqr13DTOLYpEy1Mt93KPFjaZvIu/srEcbfGGMRL7urKm5zN8Q==",
+    "Microsoft.EntityFrameworkCore.Analyzers/7.0.3": {
+      "sha512": "CLyRWFLwaOUZNPEia/aBMzFxZqm/ITKt3B+yUFtrg4Ys5VF3n2gvneuItC9IhpeOcjfdSgu/yUKf8y/IsNHs5A==",
       "type": "package",
-      "path": "microsoft.entityframeworkcore.analyzers/7.0.0",
+      "path": "microsoft.entityframeworkcore.analyzers/7.0.3",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Icon.png",
         "analyzers/dotnet/cs/Microsoft.EntityFrameworkCore.Analyzers.dll",
         "lib/netstandard2.0/_._",
-        "microsoft.entityframeworkcore.analyzers.7.0.0.nupkg.sha512",
+        "microsoft.entityframeworkcore.analyzers.7.0.3.nupkg.sha512",
         "microsoft.entityframeworkcore.analyzers.nuspec"
       ]
     },
@@ -2152,15 +2165,22 @@
         "version.txt"
       ]
     },
-    "Datos/1.0.0": {
+    "Migration.Datos/1.0.0": {
       "type": "project",
-      "path": "../Datos/Datos.csproj",
-      "msbuildProject": "../Datos/Datos.csproj"
+      "path": "../Datos/Migration.Datos.csproj",
+      "msbuildProject": "../Datos/Migration.Datos.csproj"
+    },
+    "Qcode.Datos/1.0.0": {
+      "type": "project",
+      "path": "../Datos/Qcode.Datos.csproj",
+      "msbuildProject": "../Datos/Qcode.Datos.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
-      "Datos >= 1.0.0"
+      "Microsoft.EntityFrameworkCore >= 7.0.3",
+      "Migration.Datos >= 1.0.0",
+      "Qcode.Datos >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -2169,9 +2189,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Repositorios\\Qcode\\Migration\\LogicaNegocio\\LogicaNegocio.csproj",
-      "projectName": "LogicaNegocio",
-      "projectPath": "C:\\Repositorios\\Qcode\\Migration\\LogicaNegocio\\LogicaNegocio.csproj",
+      "projectUniqueName": "C:\\Repositorios\\Qcode\\Migration\\LogicaNegocio\\Qcode.BusinessLogic.csproj",
+      "projectName": "Qcode.BusinessLogic",
+      "projectPath": "C:\\Repositorios\\Qcode\\Migration\\LogicaNegocio\\Qcode.BusinessLogic.csproj",
       "packagesPath": "C:\\Users\\Atkasky\\.nuget\\packages\\",
       "outputPath": "C:\\Repositorios\\Qcode\\Migration\\LogicaNegocio\\obj\\",
       "projectStyle": "PackageReference",
@@ -2190,8 +2210,11 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Repositorios\\Qcode\\Migration\\Datos\\Datos.csproj": {
-              "projectPath": "C:\\Repositorios\\Qcode\\Migration\\Datos\\Datos.csproj"
+            "C:\\Repositorios\\Qcode\\Migration\\Datos\\Migration.Datos.csproj": {
+              "projectPath": "C:\\Repositorios\\Qcode\\Migration\\Datos\\Migration.Datos.csproj"
+            },
+            "C:\\Repositorios\\Qcode\\Migration\\Datos\\Qcode.Datos.csproj": {
+              "projectPath": "C:\\Repositorios\\Qcode\\Migration\\Datos\\Qcode.Datos.csproj"
             }
           }
         }
@@ -2205,6 +2228,12 @@
     "frameworks": {
       "net6.0": {
         "targetAlias": "net6.0",
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore": {
+            "target": "Package",
+            "version": "[7.0.3, )"
+          }
+        },
         "imports": [
           "net461",
           "net462",

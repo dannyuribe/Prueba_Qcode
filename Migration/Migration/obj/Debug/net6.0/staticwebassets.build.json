@@ -1,8 +1,8 @@
 {
   "Version": 1,
-  "Hash": "RcYlzqWwg1wO7TWE/YfzNFiL6Jizid6Hjt4DUmTNvdg=",
-  "Source": "Migration",
-  "BasePath": "_content/Migration",
+  "Hash": "DY9J8r+exZ6wKOzSE9jtTse9GpnnG1CNYNAHRbVJFcM=",
+  "Source": "Qcode.Api",
+  "BasePath": "_content/Qcode.Api",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],

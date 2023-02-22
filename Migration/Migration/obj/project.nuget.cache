@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "YujAPSOD7Dqn2kNHqfhoUftYAAxef06dnnRcj25JSWAFbkE8DNfUrzP4btQqnzLDd9s72iBAGTNVNNINTyhkSA==",
+  "dgSpecHash": "q8JgrDsOYFQ766zJHsqzomIxx1HMIy5n+zmI75lHtY5VhXjxLZJoPk2XsIP+CziUlkGT0bGZG2+X2EfTvndepw==",
   "success": true,
-  "projectFilePath": "C:\\Repositorios\\Qcode\\Migration\\Migration\\Migration.csproj",
+  "projectFilePath": "C:\\Repositorios\\Qcode\\Migration\\Migration\\Qcode.Api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Atkasky\\.nuget\\packages\\google.protobuf\\3.21.9\\google.protobuf.3.21.9.nupkg.sha512",
     "C:\\Users\\Atkasky\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",

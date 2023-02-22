@@ -1,8 +1,8 @@
-﻿using AccesoDatos.Modelos;
-using LogicaNegocio.servicios.Vehiculos;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
+using Qcode.BusinessLogic.servicios.Vehiculos;
+using Qcode.Datos.Modelos;
 
-namespace Migration.Controllers
+namespace Qcode.Controllers
 {
     [Route("/[controller]")]
     [ApiController]
@@ -10,15 +10,15 @@ namespace Migration.Controllers
     {
         private readonly VehiculoServicio _vehiculos;
 
-        public VehiculosController()
+        public VehiculosController(VehiculoServicio vehiculoServicio)
         {
-            _vehiculos = new VehiculoServicio();
+            _vehiculos = vehiculoServicio;
         }
 
         [HttpGet("obtener-vehiculo-serial")]
-        public Task<Vehiculo> ObtenerPorSerialVehiculo(string serialVehiculo)
+        public async Task<Vehiculo> ObtenerPorSerialVehiculo(string serialVehiculo)
         {
-            return _vehiculos.ObtenerPorSerialVehiculo(serialVehiculo);
+            return await _vehiculos.ObtenerVehiculoPorSerial(serialVehiculo);
         }
     }
 }

@@ -1,0 +1,6 @@
+C:\Repositorios\Qcode\Migration\Migration\obj\Debug\net6.0\Migracion.csproj.AssemblyReference.cache
+C:\Repositorios\Qcode\Migration\Migration\obj\Debug\net6.0\Migracion.GeneratedMSBuildEditorConfig.editorconfig
+C:\Repositorios\Qcode\Migration\Migration\obj\Debug\net6.0\Migracion.AssemblyInfoInputs.cache
+C:\Repositorios\Qcode\Migration\Migration\obj\Debug\net6.0\Migracion.AssemblyInfo.cs
+C:\Repositorios\Qcode\Migration\Migration\obj\Debug\net6.0\Migracion.csproj.CoreCompileInputs.cache
+C:\Repositorios\Qcode\Migration\Migration\obj\Debug\net6.0\Migracion.MvcApplicationPartsAssemblyInfo.cache

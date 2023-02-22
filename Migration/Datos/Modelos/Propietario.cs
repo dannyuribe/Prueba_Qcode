@@ -7,7 +7,7 @@ using System.Text;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
-namespace AccesoDatos.Modelos
+namespace Qcode.Datos.Modelos
 {
     [Table("Propietarios")]
     public class Propietario

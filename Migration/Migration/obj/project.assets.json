@@ -920,30 +920,45 @@
           }
         }
       },
-      "Datos/1.0.0": {
+      "Migration.Datos/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
           "MySql.EntityFrameworkCore": "7.0.0"
         },
         "compile": {
-          "bin/placeholder/Datos.dll": {}
+          "bin/placeholder/Migration.Datos.dll": {}
         },
         "runtime": {
-          "bin/placeholder/Datos.dll": {}
+          "bin/placeholder/Migration.Datos.dll": {}
         }
       },
-      "LogicaNegocio/1.0.0": {
+      "Qcode.BusinessLogic/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
-          "Datos": "1.0.0"
+          "Microsoft.EntityFrameworkCore": "7.0.3",
+          "Migration.Datos": "1.0.0",
+          "Qcode.Datos": "1.0.0"
         },
         "compile": {
-          "bin/placeholder/LogicaNegocio.dll": {}
+          "bin/placeholder/Qcode.BusinessLogic.dll": {}
         },
         "runtime": {
-          "bin/placeholder/LogicaNegocio.dll": {}
+          "bin/placeholder/Qcode.BusinessLogic.dll": {}
+        }
+      },
+      "Qcode.Datos/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "MySql.EntityFrameworkCore": "7.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Qcode.Datos.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Qcode.Datos.dll": {}
         }
       }
     }
@@ -2734,23 +2749,28 @@
         "version.txt"
       ]
     },
-    "Datos/1.0.0": {
+    "Migration.Datos/1.0.0": {
       "type": "project",
-      "path": "../Datos/Datos.csproj",
-      "msbuildProject": "../Datos/Datos.csproj"
+      "path": "../Datos/Migration.Datos.csproj",
+      "msbuildProject": "../Datos/Migration.Datos.csproj"
     },
-    "LogicaNegocio/1.0.0": {
+    "Qcode.BusinessLogic/1.0.0": {
       "type": "project",
-      "path": "../LogicaNegocio/LogicaNegocio.csproj",
-      "msbuildProject": "../LogicaNegocio/LogicaNegocio.csproj"
+      "path": "../LogicaNegocio/Qcode.BusinessLogic.csproj",
+      "msbuildProject": "../LogicaNegocio/Qcode.BusinessLogic.csproj"
+    },
+    "Qcode.Datos/1.0.0": {
+      "type": "project",
+      "path": "../Datos/Qcode.Datos.csproj",
+      "msbuildProject": "../Datos/Qcode.Datos.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
-      "Datos >= 1.0.0",
-      "LogicaNegocio >= 1.0.0",
       "Microsoft.EntityFrameworkCore.Tools >= 7.0.3",
       "MySql.EntityFrameworkCore >= 7.0.0",
+      "Qcode.BusinessLogic >= 1.0.0",
+      "Qcode.Datos >= 1.0.0",
       "Swashbuckle.AspNetCore >= 6.2.3"
     ]
   },
@@ -2760,9 +2780,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Repositorios\\Qcode\\Migration\\Migration\\Migration.csproj",
-      "projectName": "Migration",
-      "projectPath": "C:\\Repositorios\\Qcode\\Migration\\Migration\\Migration.csproj",
+      "projectUniqueName": "C:\\Repositorios\\Qcode\\Migration\\Migration\\Qcode.Api.csproj",
+      "projectName": "Qcode.Api",
+      "projectPath": "C:\\Repositorios\\Qcode\\Migration\\Migration\\Qcode.Api.csproj",
       "packagesPath": "C:\\Users\\Atkasky\\.nuget\\packages\\",
       "outputPath": "C:\\Repositorios\\Qcode\\Migration\\Migration\\obj\\",
       "projectStyle": "PackageReference",
@@ -2781,11 +2801,11 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Repositorios\\Qcode\\Migration\\Datos\\Datos.csproj": {
-              "projectPath": "C:\\Repositorios\\Qcode\\Migration\\Datos\\Datos.csproj"
+            "C:\\Repositorios\\Qcode\\Migration\\Datos\\Qcode.Datos.csproj": {
+              "projectPath": "C:\\Repositorios\\Qcode\\Migration\\Datos\\Qcode.Datos.csproj"
             },
-            "C:\\Repositorios\\Qcode\\Migration\\LogicaNegocio\\LogicaNegocio.csproj": {
-              "projectPath": "C:\\Repositorios\\Qcode\\Migration\\LogicaNegocio\\LogicaNegocio.csproj"
+            "C:\\Repositorios\\Qcode\\Migration\\LogicaNegocio\\Qcode.BusinessLogic.csproj": {
+              "projectPath": "C:\\Repositorios\\Qcode\\Migration\\LogicaNegocio\\Qcode.BusinessLogic.csproj"
             }
           }
         }

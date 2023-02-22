@@ -4,12 +4,12 @@
     "C:\\Repositorios\\Qcode\\Migration\\LogicaNegocio\\LogicaNegocio.csproj": {}
   },
   "projects": {
-    "C:\\Repositorios\\Qcode\\Migration\\Datos\\Datos.csproj": {
+    "C:\\Repositorios\\Qcode\\Migration\\Datos\\Migration.Datos.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Repositorios\\Qcode\\Migration\\Datos\\Datos.csproj",
-        "projectName": "Datos",
-        "projectPath": "C:\\Repositorios\\Qcode\\Migration\\Datos\\Datos.csproj",
+        "projectUniqueName": "C:\\Repositorios\\Qcode\\Migration\\Datos\\Migration.Datos.csproj",
+        "projectName": "Migration.Datos",
+        "projectPath": "C:\\Repositorios\\Qcode\\Migration\\Datos\\Migration.Datos.csproj",
         "packagesPath": "C:\\Users\\Atkasky\\.nuget\\packages\\",
         "outputPath": "C:\\Repositorios\\Qcode\\Migration\\Datos\\obj\\",
         "projectStyle": "PackageReference",
@@ -95,8 +95,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Repositorios\\Qcode\\Migration\\Datos\\Datos.csproj": {
-                "projectPath": "C:\\Repositorios\\Qcode\\Migration\\Datos\\Datos.csproj"
+              "C:\\Repositorios\\Qcode\\Migration\\Datos\\Migration.Datos.csproj": {
+                "projectPath": "C:\\Repositorios\\Qcode\\Migration\\Datos\\Migration.Datos.csproj"
               }
             }
           }
@@ -110,6 +110,12 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[7.0.3, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
