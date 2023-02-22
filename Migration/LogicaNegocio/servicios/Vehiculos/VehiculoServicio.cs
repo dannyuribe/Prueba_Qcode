@@ -10,15 +10,19 @@ using System.Threading.Tasks;
 
 namespace Qcode.BusinessLogic.servicios.Vehiculos
 {
-    public class VehiculoServicio:IVehiculoServicio
+    public class VehiculoServicio: IVehiculoServicio
     {
-        private readonly RepositorioGenerico<Vehiculo> _repositorioVehiculo;
+        private readonly IRepositorioGenerico<Vehiculo> _repositorioVehiculo;
 
-        public VehiculoServicio(RepositorioGenerico<Vehiculo> repositorioVehiculo)
+        public VehiculoServicio(IRepositorioGenerico<Vehiculo> repositorioVehiculo)
         {
             _repositorioVehiculo = repositorioVehiculo;
         }
 
+        public async Task AgregarVehiculo(Vehiculo vehiculo)
+        {
+            await _repositorioVehiculo.Agregar(vehiculo);
+        }
 
         public async Task<Vehiculo> ObtenerVehiculoPorSerial(string serialVehiculo)
         {

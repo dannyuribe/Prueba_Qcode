@@ -7,9 +7,8 @@ using System.Threading.Tasks;
 
 namespace Qcode.BusinessLogic.Interfaces
 {
-    public interface IVehiculoServicio
+    public interface IPropietarioServicio
     {
-        Task<Vehiculo> ObtenerVehiculoPorSerial(String id);
-        Task AgregarVehiculo(Vehiculo vehiculo);
+        Task AgregarPropietario(Propietario propietario);
     }
 }

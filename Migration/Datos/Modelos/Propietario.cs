@@ -12,6 +12,10 @@ namespace Qcode.Datos.Modelos
     [Table("Propietarios")]
     public class Propietario
     {
+        public Propietario()
+        {
+            Vehiculos= new HashSet<Vehiculo>();
+        }
         [Key]
         public string IdPropietario { get; set; }
         [Required]
@@ -28,7 +32,7 @@ namespace Qcode.Datos.Modelos
         public string Direccion { get; set; }
         [Required]
         public DateTime FechaCrea { get; set; }
-
+        [JsonIgnore]
         public virtual ICollection<Vehiculo> Vehiculos { get; set; }
     }
 }

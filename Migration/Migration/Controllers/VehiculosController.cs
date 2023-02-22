@@ -1,18 +1,25 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Qcode.BusinessLogic.Interfaces;
 using Qcode.BusinessLogic.servicios.Vehiculos;
 using Qcode.Datos.Modelos;
 
-namespace Qcode.Controllers
+namespace Qcode.Api.Controllers
 {
     [Route("/[controller]")]
     [ApiController]
     public class VehiculosController : Controller
     {
-        private readonly VehiculoServicio _vehiculos;
+        private readonly IVehiculoServicio _vehiculos;
 
-        public VehiculosController(VehiculoServicio vehiculoServicio)
+        public VehiculosController(IVehiculoServicio vehiculoServicio)
         {
             _vehiculos = vehiculoServicio;
+        }
+
+        [HttpPost("Agregar-vehiculo")]
+        public async Task AgregarVehiculo(Vehiculo vehiculo)
+        {
+            await _vehiculos.AgregarVehiculo(vehiculo);
         }
 
         [HttpGet("obtener-vehiculo-serial")]

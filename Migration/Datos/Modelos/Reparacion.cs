@@ -12,6 +12,11 @@ namespace Qcode.Datos.Modelos
     [Table("Reparaciones")]
     public class Reparacion
     {
+        public Reparacion()
+        {
+            Diagnosticos = new HashSet<Diagnostico>();
+        }
+
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public long IdReparacion { get; set; }

@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using Qcode.BusinessLogic.Interfaces;
 using Qcode.BusinessLogic.servicios.Vehiculos;
+using Qcode.BusinessLogic.Servicios.Propietarios;
 using Qcode.Datos.Contexto;
 using Qcode.Datos.Modelos;
 using Qcode.Datos.repositorio.Generico;
@@ -21,11 +22,9 @@ builder.Services.AddSingleton<IConfiguration>(builder.Configuration);
 var cadenaConexion = builder.Configuration.GetConnectionString("MySqlConnection");
 builder.Services.AddDbContext<ReparacionesContext>(options => options.UseMySQL(cadenaConexion));
 
-//builder.Services.AddScoped(typeof(IRepositorioGenerico<>), typeof(RepositorioGenerico<>));
-
-
-//builder.Services.AddSingleton<IRepositorioGenerico<Vehiculo>, RepositorioGenerico<Vehiculo>>();
-builder.Services.AddSingleton<IVehiculoServicio,VehiculoServicio>();
+builder.Services.AddTransient(typeof(IRepositorioGenerico<>), typeof(RepositorioGenerico<>));
+builder.Services.AddTransient<IVehiculoServicio, VehiculoServicio>();
+builder.Services.AddTransient<IPropietarioServicio, PropietarioServicio>();
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
