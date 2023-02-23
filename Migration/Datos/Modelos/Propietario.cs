@@ -33,6 +33,6 @@ namespace Qcode.Datos.Modelos
         [Required]
         public DateTime FechaCrea { get; set; }
         [JsonIgnore]
-        public virtual ICollection<Vehiculo> Vehiculos { get; set; }
+        protected virtual ICollection<Vehiculo> Vehiculos { get; set; }
     }
 }

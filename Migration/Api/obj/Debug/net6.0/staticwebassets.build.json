@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "DY9J8r+exZ6wKOzSE9jtTse9GpnnG1CNYNAHRbVJFcM=",
+  "Source": "Qcode.Api",
+  "BasePath": "_content/Qcode.Api",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

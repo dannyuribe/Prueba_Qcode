@@ -32,9 +32,11 @@ namespace Qcode.Datos.Modelos
         [ForeignKey("Vehiculos")]
         public string SerialVehiculo { get; set; }
 
-
-        public virtual Vehiculo Vehiculos { get; set; }
-        public virtual EstadoReparacion EstadoReparaciones { get; set; }
-        public virtual ICollection<Diagnostico> Diagnosticos { get; set; }
+        [JsonIgnore]
+        protected virtual Vehiculo Vehiculos { get; set; }
+        [JsonIgnore]
+        protected virtual EstadoReparacion EstadoReparaciones { get; set; }
+        [JsonIgnore]
+        protected virtual ICollection<Diagnostico> Diagnosticos { get; set; }
     }
 }

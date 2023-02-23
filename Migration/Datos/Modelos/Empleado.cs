@@ -12,6 +12,10 @@ namespace Qcode.Datos.Modelos
     [Table("Empleados")]
     public class Empleado
     {
+        public Empleado()
+        {
+            Diagnosticos = new HashSet<Diagnostico>();
+        }
         [Key]
         public string IdEmpleado { get; set; }
         [Required]
@@ -28,6 +32,7 @@ namespace Qcode.Datos.Modelos
         public string Contrasena { get; set;}
         [Required]
         public DateTime FechaCrea { get; set;}
-        public virtual ICollection<Diagnostico> Diagnosticos { get; set; }
+        [JsonIgnore]
+        protected virtual ICollection<Diagnostico> Diagnosticos { get; set; }
     }
 }

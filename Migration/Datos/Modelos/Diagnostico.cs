@@ -29,9 +29,10 @@ namespace Qcode.Datos.Modelos
         [Required]
         public DateTime FechaCrea { get; set; }
 
-
-        public virtual Reparacion Reparaciones { get; set; }
-        public virtual Empleado Empleados { get; set; }
+        [JsonIgnore]
+        protected virtual Reparacion Reparaciones { get; set; }
+        [JsonIgnore]
+        protected virtual Empleado Empleados { get; set; }
     }
 }
     

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
@@ -30,9 +31,9 @@ namespace Qcode.Datos.Modelos
         [Required]
         public DateTime FechaCrea { get; set; }
         [JsonIgnore]
-        public virtual Propietario Propietarios { get; set; }
+        protected virtual Propietario Propietarios { get; set; }
         [JsonIgnore]
-        public virtual ICollection<Reparacion> Reparaciones { get;set; }
+        protected virtual ICollection<Reparacion> Reparaciones { get;set; }
 
     }
 }

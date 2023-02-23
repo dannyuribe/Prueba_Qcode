@@ -920,25 +920,11 @@
           }
         }
       },
-      "Migration.Datos/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v6.0",
-        "dependencies": {
-          "MySql.EntityFrameworkCore": "7.0.0"
-        },
-        "compile": {
-          "bin/placeholder/Migration.Datos.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Migration.Datos.dll": {}
-        }
-      },
       "Qcode.BusinessLogic/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
           "Microsoft.EntityFrameworkCore": "7.0.3",
-          "Migration.Datos": "1.0.0",
           "Qcode.Datos": "1.0.0"
         },
         "compile": {
@@ -2748,11 +2734,6 @@
         "useSharedDesignerContext.txt",
         "version.txt"
       ]
-    },
-    "Migration.Datos/1.0.0": {
-      "type": "project",
-      "path": "../Datos/Migration.Datos.csproj",
-      "msbuildProject": "../Datos/Migration.Datos.csproj"
     },
     "Qcode.BusinessLogic/1.0.0": {
       "type": "project",

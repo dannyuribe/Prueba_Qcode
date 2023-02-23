@@ -698,19 +698,6 @@
           }
         }
       },
-      "Migration.Datos/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v6.0",
-        "dependencies": {
-          "MySql.EntityFrameworkCore": "7.0.0"
-        },
-        "compile": {
-          "bin/placeholder/Migration.Datos.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Migration.Datos.dll": {}
-        }
-      },
       "Qcode.Datos/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
@@ -2165,11 +2152,6 @@
         "version.txt"
       ]
     },
-    "Migration.Datos/1.0.0": {
-      "type": "project",
-      "path": "../Datos/Migration.Datos.csproj",
-      "msbuildProject": "../Datos/Migration.Datos.csproj"
-    },
     "Qcode.Datos/1.0.0": {
       "type": "project",
       "path": "../Datos/Qcode.Datos.csproj",
@@ -2179,7 +2161,6 @@
   "projectFileDependencyGroups": {
     "net6.0": [
       "Microsoft.EntityFrameworkCore >= 7.0.3",
-      "Migration.Datos >= 1.0.0",
       "Qcode.Datos >= 1.0.0"
     ]
   },
@@ -2210,9 +2191,6 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Repositorios\\Qcode\\Migration\\Datos\\Migration.Datos.csproj": {
-              "projectPath": "C:\\Repositorios\\Qcode\\Migration\\Datos\\Migration.Datos.csproj"
-            },
             "C:\\Repositorios\\Qcode\\Migration\\Datos\\Qcode.Datos.csproj": {
               "projectPath": "C:\\Repositorios\\Qcode\\Migration\\Datos\\Qcode.Datos.csproj"
             }

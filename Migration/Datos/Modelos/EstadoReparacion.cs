@@ -12,6 +12,10 @@ namespace Qcode.Datos.Modelos
     [Table("EstadoReparacion")]
     public class EstadoReparacion
     {
+        public EstadoReparacion()
+        {
+            Reparaciones= new HashSet<Reparacion>();
+        }
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public long IdEstadoReparacion { get; set; }
@@ -23,7 +27,7 @@ namespace Qcode.Datos.Modelos
         public string Descripcion { get; set; }
         [Required]
         public DateTime FechaCrea { get; set; }
-
+        [JsonIgnore]
         public virtual ICollection<Reparacion> Reparaciones { get; set; }
     }
 }

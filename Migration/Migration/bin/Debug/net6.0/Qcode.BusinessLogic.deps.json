@@ -9,7 +9,6 @@
       "Qcode.BusinessLogic/1.0.0": {
         "dependencies": {
           "Microsoft.EntityFrameworkCore": "7.0.3",
-          "Migration.Datos": "1.0.0",
           "Qcode.Datos": "1.0.0"
         },
         "runtime": {
