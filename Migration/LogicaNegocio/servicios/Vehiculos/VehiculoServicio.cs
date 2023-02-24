@@ -29,5 +29,8 @@ namespace Qcode.BusinessLogic.servicios.Vehiculos
             Vehiculo vehiculo = await _repositorioVehiculo.ObtenerPorId(serialVehiculo);
             return vehiculo;
         }
+
+        
+
     }
 }

@@ -20,6 +20,7 @@ namespace Qcode.BusinessLogic.Servicios.Propietarios
 
         public async Task AgregarPropietario(Propietario propietario)
         {
+
            await _repositorioPropietario.Agregar(propietario);
         }
     }

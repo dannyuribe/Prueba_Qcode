@@ -53,9 +53,14 @@ namespace Qcode.Datos.repositorio.Generico
             await _dbContext.SaveChangesAsync();
         }
 
-        public async Task<IEnumerable<T>> ObtenerPorCondicion(Expression<Func<T, bool>> condicion)
+        public async Task<IEnumerable<T>> ObtenerRegistrosPorCondicion(Expression<Func<T, bool>> condicion)
         {
             return await _dbSet.Where(condicion).ToListAsync();
         }
+        public async Task<T> ObtenerRegistroPorCondicion(Expression<Func<T, bool>> condicion)
+        {
+            return await _dbSet.Where(condicion).FirstOrDefaultAsync();
+        }
+
     }
 }

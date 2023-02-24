@@ -22,7 +22,7 @@ namespace Qcode.Api.Controllers
             await _vehiculos.AgregarVehiculo(vehiculo);
         }
 
-        [HttpGet("obtener-vehiculo-serial")]
+        [HttpGet("obtener-vehiculo")]
         public async Task<Vehiculo> ObtenerPorSerialVehiculo(string serialVehiculo)
         {
             return await _vehiculos.ObtenerVehiculoPorSerial(serialVehiculo);
