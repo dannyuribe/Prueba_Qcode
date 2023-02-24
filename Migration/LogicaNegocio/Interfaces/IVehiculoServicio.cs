@@ -11,5 +11,8 @@ namespace Qcode.BusinessLogic.Interfaces
     {
         Task<Vehiculo> ObtenerVehiculoPorSerial(String id);
         Task AgregarVehiculo(Vehiculo vehiculo);
+        Task<int> CargarVehiculos(Stream archivoExcel);
+
+        Task EditarVehiculo(Vehiculo vehiculo);
     }
 }

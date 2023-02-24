@@ -13,14 +13,8 @@ namespace Qcode.Datos.Modelos
     [Table("Vehiculos")]
     public class Vehiculo
     {
-        public Vehiculo()
-        {
-            Reparaciones = new HashSet<Reparacion>();
-        }
         [Key]
         public string SerialVehiculo { get; set; }
-        [ForeignKey("Propietarios")]
-        public string IdPropietario { get; set; }
         [Required]
         [StringLength(10)]
         public string Placa { get; set; }
@@ -30,10 +24,7 @@ namespace Qcode.Datos.Modelos
         public string Modelo { get; set; }
         [Required]
         public DateTime FechaCrea { get; set; }
-        [JsonIgnore]
-        protected virtual Propietario Propietarios { get; set; }
-        [JsonIgnore]
-        protected virtual ICollection<Reparacion> Reparaciones { get;set; }
-
+        [StringLength(200)]
+        public string RutaImagen { get; set; }
     }
 }

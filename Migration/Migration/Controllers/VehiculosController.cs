@@ -9,23 +9,41 @@ namespace Qcode.Api.Controllers
     [ApiController]
     public class VehiculosController : Controller
     {
-        private readonly IVehiculoServicio _vehiculos;
+        private readonly IVehiculoServicio _vehiculosServicios;
 
         public VehiculosController(IVehiculoServicio vehiculoServicio)
         {
-            _vehiculos = vehiculoServicio;
+            _vehiculosServicios = vehiculoServicio;
         }
 
         [HttpPost("Agregar-vehiculo")]
         public async Task AgregarVehiculo(Vehiculo vehiculo)
         {
-            await _vehiculos.AgregarVehiculo(vehiculo);
+            await _vehiculosServicios.AgregarVehiculo(vehiculo);
         }
 
         [HttpGet("obtener-vehiculo")]
         public async Task<Vehiculo> ObtenerPorSerialVehiculo(string serialVehiculo)
         {
-            return await _vehiculos.ObtenerVehiculoPorSerial(serialVehiculo);
+            return await _vehiculosServicios.ObtenerVehiculoPorSerial(serialVehiculo);
+        }
+
+        [HttpPost("Cargar-Reparaciones-Excel")]
+        public async Task<IActionResult> CargarReparacionesExcel(IFormFile archivo)
+        {
+            if (archivo == null || archivo.Length == 0)
+            {
+                return BadRequest("No se ha cargado ningún archivo.");
+            }
+
+            using (var stream = new MemoryStream())
+            {
+                await archivo.CopyToAsync(stream);
+                stream.Position = 0;
+
+                await _vehiculosServicios.CargarVehiculos(stream);
+            }
+            return Ok();
         }
     }
 }
