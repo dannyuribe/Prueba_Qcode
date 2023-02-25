@@ -51,7 +51,6 @@ namespace Qcode.Api.Controllers
         {
             return await _vehiculosServicios.ObtenerVehiculoPorSerial(serialVehiculo);
         }
-
-        
+                
     }
 }
