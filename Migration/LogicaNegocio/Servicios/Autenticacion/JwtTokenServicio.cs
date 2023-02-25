@@ -19,14 +19,14 @@ namespace Qcode.BusinessLogic.Servicios.Autenticacion
             _configuration = configuration;
         }
 
-        public string GenerarToken(string IdEmpleado)
+        public async Task<string> GenerarToken(string IdEmpleado)
         {
             var usuario = _configuration["Jwt:Usuario"];
             var llaveSecreta = _configuration["Jwt:LlaveSecreta"];
 
             if(llaveSecreta == null)
             {
-                return "Error al generar el Token";
+                throw new Exception("Error al cargar el Token.");
             }
 
             var llave = Encoding.UTF8.GetBytes(llaveSecreta);
@@ -48,7 +48,7 @@ namespace Qcode.BusinessLogic.Servicios.Autenticacion
             var tokenHandler = new JwtSecurityTokenHandler();
             var token = tokenHandler.CreateToken(tokenDescriptor);
             
-            return tokenHandler.WriteToken(token); ;
+            return tokenHandler.WriteToken(token);
         }
     }
 }

@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Runtime.Serialization;
-using System.Text;
-using System.Text.Json.Serialization;
-using System.Threading.Tasks;
+using System.Runtime.CompilerServices;
 
 namespace Qcode.Datos.Modelos
 {
@@ -24,7 +18,11 @@ namespace Qcode.Datos.Modelos
         public string Modelo { get; set; }
         [Required]
         public DateTime FechaCrea { get; set; }
+        [Required]
+        public bool Activo { get; set; }
         [StringLength(200)]
         public string RutaImagen { get; set; }
+        [Column(TypeName ="decimal(53,1)")]
+        public decimal Costo { get; set; }
     }
 }

@@ -8,6 +8,6 @@ namespace Qcode.BusinessLogic.Interfaces
 {
     public interface IJwtTokenServicio
     {
-        string GenerarToken(string IdEmpleado);
+        Task<string> GenerarToken(string IdEmpleado);
     }
 }

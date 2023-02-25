@@ -8,6 +8,6 @@ namespace Qcode.BusinessLogic.Interfaces
 {
     public interface IJwtAutenticacionServicio
     {
-        string Autenticacion(string usuario, string contrasena);
+        Task<string> Autenticacion(string usuario, string contrasena);
     }
 }

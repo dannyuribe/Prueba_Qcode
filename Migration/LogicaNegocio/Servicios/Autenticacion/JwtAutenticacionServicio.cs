@@ -18,15 +18,15 @@ namespace Qcode.BusinessLogic.Servicios.Autenticacion
             _repositorioEmpleado = repositorioEmpleado;
             _jwtTokenServicio = jwtTokenServicio;
         }
-        public string Autenticacion(string usuario, string contrasena)
+        public async Task<string> Autenticacion(string usuario, string contrasena)
         {
-            var Empleado = _repositorioEmpleado.ObtenerRegistroPorCondicion(x => x.Usuario == usuario && x.Contrasena == contrasena);
+            var Empleado = await _repositorioEmpleado.ObtenerRegistroPorCondicion(x => x.Usuario == usuario && x.Contrasena == contrasena);
 
             if(Empleado== null)
             {
-                return null;
+                throw new Exception("Error al Cargar Empleado. No se encontraron registros.");
             }
-            return _jwtTokenServicio.GenerarToken(Empleado.Result.IdEmpleado);
+            return await _jwtTokenServicio.GenerarToken(Empleado.IdEmpleado);
         }
     }
 }

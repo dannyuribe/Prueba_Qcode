@@ -16,19 +16,13 @@ namespace Qcode.Api.Controllers
             _vehiculosServicios = vehiculoServicio;
         }
 
-        [HttpPost("Agregar-vehiculo")]
+        [HttpPost("agregar-vehiculo")]
         public async Task AgregarVehiculo(Vehiculo vehiculo)
         {
             await _vehiculosServicios.AgregarVehiculo(vehiculo);
         }
 
-        [HttpGet("obtener-vehiculo")]
-        public async Task<Vehiculo> ObtenerPorSerialVehiculo(string serialVehiculo)
-        {
-            return await _vehiculosServicios.ObtenerVehiculoPorSerial(serialVehiculo);
-        }
-
-        [HttpPost("Cargar-Reparaciones-Excel")]
+        [HttpPost("cargar-vehiculos-Excel")]
         public async Task<IActionResult> CargarReparacionesExcel(IFormFile archivo)
         {
             if (archivo == null || archivo.Length == 0)
@@ -45,5 +39,19 @@ namespace Qcode.Api.Controllers
             }
             return Ok();
         }
+
+        [HttpPost("editar-vehiculo")]
+        public async Task EditarVehiculo(Vehiculo vehiculo)
+        {
+            await _vehiculosServicios.EditarVehiculo(vehiculo);
+        }
+
+        [HttpGet("obtener-vehiculo")]
+        public async Task<Vehiculo> ObtenerPorSerialVehiculo(string serialVehiculo)
+        {
+            return await _vehiculosServicios.ObtenerVehiculoPorSerial(serialVehiculo);
+        }
+
+        
     }
 }

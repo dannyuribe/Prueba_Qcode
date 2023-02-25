@@ -1,5 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Storage;
 using Qcode.Datos.Contexto;
+using Qcode.Datos.Modelos;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,14 +23,10 @@ namespace Qcode.Datos.repositorio.Generico
         }
 
         public IEnumerable<T> ObtenerTodos()
-        {
+        { 
             return _dbSet.AsQueryable();
         }
 
-        public async Task<T> ObtenerPorId(int id)
-        {
-            return await _dbSet.FindAsync(id);
-        }
         public async Task<T> ObtenerPorId(string id)
         {
             return await _dbSet.FindAsync(id);
@@ -39,28 +37,22 @@ namespace Qcode.Datos.repositorio.Generico
             await _dbSet.AddAsync(entity);
             await _dbContext.SaveChangesAsync();
         }
-
+        public async Task<T> ObtenerRegistroPorCondicion(Expression<Func<T, bool>> condicion)
+        {
+            return await _dbSet.Where(condicion).FirstOrDefaultAsync();
+        }
+        public async Task<List<T>> ObtenerRegistrosPorCondicion(Expression<Func<T, bool>> condicion)
+        {
+            return await _dbSet.Where(condicion).ToListAsync();
+        }
         public async Task Actualizar(T entity)
         {
             _dbContext.Entry(entity).State = EntityState.Modified;
             await _dbContext.SaveChangesAsync();
         }
-
-        public async Task Eliminar(int id)
+        public async Task<IDbContextTransaction> BeginTransaction()
         {
-            var entity = await _dbSet.FindAsync(id);
-            _dbSet.Remove(entity);
-            await _dbContext.SaveChangesAsync();
+            return _dbContext.Database.BeginTransaction();
         }
-
-        public async Task<IEnumerable<T>> ObtenerRegistrosPorCondicion(Expression<Func<T, bool>> condicion)
-        {
-            return await _dbSet.Where(condicion).ToListAsync();
-        }
-        public async Task<T> ObtenerRegistroPorCondicion(Expression<Func<T, bool>> condicion)
-        {
-            return await _dbSet.Where(condicion).FirstOrDefaultAsync();
-        }
-
     }
 }

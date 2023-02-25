@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore.Storage;
+using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
@@ -11,11 +13,10 @@ namespace Qcode.Datos.repositorio.Generico
     {
         IEnumerable<T> ObtenerTodos();
         Task<T> ObtenerPorId(String id);
-        Task<T> ObtenerPorId(int id);
-        Task<IEnumerable<T>> ObtenerRegistrosPorCondicion(Expression<Func<T, bool>> condicion);
-        Task<T> ObtenerRegistroPorCondicion(Expression<Func<T, bool>> condicion);
         Task Agregar(T entity);
         Task Actualizar(T entity);
-        Task Eliminar(int id);
+        Task<IDbContextTransaction> BeginTransaction();
+        Task<T> ObtenerRegistroPorCondicion(Expression<Func<T, bool>> condicion);
+        Task<List<T>> ObtenerRegistrosPorCondicion(Expression<Func<T, bool>> condicion);
     }
 }

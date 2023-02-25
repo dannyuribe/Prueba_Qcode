@@ -11,8 +11,8 @@ using Qcode.Datos.Contexto;
 namespace Qcode.Datos.Migrations
 {
     [DbContext(typeof(ReparacionesContext))]
-    [Migration("20230224161634_PrimerMigracion")]
-    partial class PrimerMigracion
+    [Migration("20230225032439_Primer_Migracion")]
+    partial class Primer_Migracion
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -59,6 +59,12 @@ namespace Qcode.Datos.Migrations
                 {
                     b.Property<string>("SerialVehiculo")
                         .HasColumnType("varchar(255)");
+
+                    b.Property<bool>("Activo")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<decimal>("Costo")
+                        .HasColumnType("decimal(53,1)");
 
                     b.Property<DateTime>("FechaCrea")
                         .HasColumnType("datetime(6)");

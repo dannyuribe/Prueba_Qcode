@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Qcode.Datos.Migrations
 {
     /// <inheritdoc />
-    public partial class PrimerMigracion : Migration
+    public partial class Primer_Migracion : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -40,7 +40,9 @@ namespace Qcode.Datos.Migrations
                     Marca = table.Column<string>(type: "varchar(20)", maxLength: 20, nullable: false),
                     Modelo = table.Column<string>(type: "varchar(20)", maxLength: 20, nullable: false),
                     FechaCrea = table.Column<DateTime>(type: "datetime(6)", nullable: false),
-                    RutaImagen = table.Column<string>(type: "varchar(200)", maxLength: 200, nullable: false)
+                    Activo = table.Column<bool>(type: "tinyint(1)", nullable: false),
+                    RutaImagen = table.Column<string>(type: "varchar(200)", maxLength: 200, nullable: false),
+                    Costo = table.Column<decimal>(type: "decimal(53,1)", nullable: false)
                 },
                 constraints: table =>
                 {
