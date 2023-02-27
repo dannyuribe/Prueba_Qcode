@@ -49,7 +49,7 @@
             </div>
             <div class="container text-center">
                 <button v-if="editar" class="btn btn-primary">Editar</button>
-                <button v-else class="btn btn-primary " @click="GuardarVehiculo">Crear</button>
+                <button v-else class="btn btn-primary " @click="GuardarImagenVehiculo">Crear</button>
             </div>
         </div>
     </div>
@@ -110,12 +110,19 @@ export default {
                     console.log("error: " + error);
                 })
         },
-        GuardarImagenVehiculo(dato){
-            if(dato!== null && dato !== undefined){
+        GuardarImagenVehiculo(){
+            if(this.ruta!== null && this.ruta !== undefined){
+                const byteCharacters = atob(this.ruta.split(',')[1]);
+const byteNumbers = new Array(byteCharacters.length);
+for (let i = 0; i < byteCharacters.length; i++) {
+  byteNumbers[i] = byteCharacters.charCodeAt(i);
+}
+const byteArray = new Uint8Array(byteNumbers);
                 const formData = new FormData();
-                formData.append('serialVehiculo',this.vehiculo.serialVehiculo);
-                formData.append('archivo', this.ruta);
-                utilidades.PostArchivo("vehiculos/cagar-imagen-vehiculo",)
+                formData.append('archivo', byteArray);
+                formData.append('serialVehiculo', this.vehiculo.serialVehiculo);
+
+                utilidades.PostArchivo("Vehiculos/cargar-imagen-vehiculo",formData)
                 .then((respuesta)=>{
                     console.log("respuesta: "+ respuesta);
                 }).catch((error)=>{
@@ -135,10 +142,10 @@ export default {
             }           
 
             if (this.vehiculo != undefined) {
-                utilidades.Post("Vehiculos/agregar-vehiculo", datos)
+                utilidades.Post("Vehiculos/cargar-vehiculo", datos)
                     .then((respuesta) => {
                         console.log(respuesta.data);
-                        //this.GuardarImagenVehiculo(this.ruta);
+                       // this.GuardarImagenVehiculo(this.ruta);
                     })
                     .catch((error) => {
                         console.log("error:" + error);

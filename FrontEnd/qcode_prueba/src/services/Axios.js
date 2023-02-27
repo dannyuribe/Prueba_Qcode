@@ -11,6 +11,7 @@ export default class Utilidades{
         'Authorization': 'Bearer '+window.localStorage.getItem("token"),
         'Referrer-Policy': 'no-referrer',   
         'Content-Type': 'application/json',   
+        "Accept" : "*/*"
       }
     })
   }
@@ -27,11 +28,12 @@ export default class Utilidades{
     })
   }
 
-  static PostArchivo(url,data){
+  static PostArchivo(url,data,params){
     return axios({
       method:"POST",
       url: `http://localhost:5109/${url}`,
 			data: data,
+      params:params,
       headers:{
         'Authorization': 'Bearer '+window.localStorage.getItem("token"),
         'Referrer-Policy': 'no-referrer',   

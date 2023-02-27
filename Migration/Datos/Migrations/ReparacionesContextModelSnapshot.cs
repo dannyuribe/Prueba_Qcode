@@ -67,7 +67,6 @@ namespace Qcode.Datos.Migrations
                         .HasColumnType("datetime(6)");
 
                     b.Property<byte[]>("Imagen")
-                        .IsRequired()
                         .HasMaxLength(300000)
                         .HasColumnType("longblob");
 

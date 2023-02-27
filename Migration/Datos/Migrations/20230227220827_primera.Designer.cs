@@ -11,7 +11,7 @@ using Qcode.Datos.Contexto;
 namespace Qcode.Datos.Migrations
 {
     [DbContext(typeof(ReparacionesContext))]
-    [Migration("20230227153319_primera")]
+    [Migration("20230227220827_primera")]
     partial class primera
     {
         /// <inheritdoc />
@@ -70,7 +70,6 @@ namespace Qcode.Datos.Migrations
                         .HasColumnType("datetime(6)");
 
                     b.Property<byte[]>("Imagen")
-                        .IsRequired()
                         .HasMaxLength(300000)
                         .HasColumnType("longblob");
 

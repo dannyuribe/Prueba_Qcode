@@ -41,8 +41,8 @@ namespace Qcode.Datos.Migrations
                     Modelo = table.Column<int>(type: "int", nullable: false),
                     FechaCrea = table.Column<DateTime>(type: "datetime(6)", nullable: false),
                     Activo = table.Column<bool>(type: "tinyint(1)", nullable: false),
-                    Imagen = table.Column<byte[]>(type: "longblob", maxLength: 300000, nullable: false),
-                    Costo = table.Column<decimal>(type: "decimal(53,1)", nullable: false)
+                    Costo = table.Column<decimal>(type: "decimal(53,1)", nullable: false),
+                    Imagen = table.Column<byte[]>(type: "longblob", maxLength: 300000, nullable: true)
                 },
                 constraints: table =>
                 {

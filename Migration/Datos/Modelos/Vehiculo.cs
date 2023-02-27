@@ -10,18 +10,16 @@ namespace Qcode.Datos.Modelos
     {
         [Key]
         public string SerialVehiculo { get; set; }
-        [Required]
         [StringLength(10)]
         public string Placa { get; set; }
         [StringLength(20)]
         public string Marca { get; set; }
         public int Modelo { get; set; }
-        [Required]
         public DateTime FechaCrea { get; set; }
-        [Required]
         public bool Activo { get; set; }
         [Column(TypeName ="decimal(53,1)")]
         public decimal Costo { get; set; }
+        [JsonIgnore]
         [MaxLength(300000)]
         public byte[]? Imagen { get; set; }
     }
