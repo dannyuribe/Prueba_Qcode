@@ -13,6 +13,21 @@ using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
+
+
+//Reglas Cors
+var ReglasCors = "CorsP";
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy(ReglasCors, builder =>
+    {
+        builder
+        .AllowAnyOrigin()
+        .WithOrigins("http://localhost:8081")
+        .AllowAnyMethod()
+        .AllowAnyHeader();
+    });
+});
 // Add services to the container.
 
 builder.Services.AddControllers();
@@ -42,6 +57,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+app.UseCors("CorsP");
 
 app.UseAuthentication();
 

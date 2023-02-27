@@ -11,8 +11,8 @@ using Qcode.Datos.Contexto;
 namespace Qcode.Datos.Migrations
 {
     [DbContext(typeof(ReparacionesContext))]
-    [Migration("20230225032439_Primer_Migracion")]
-    partial class Primer_Migracion
+    [Migration("20230227153319_primera")]
+    partial class primera
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -69,25 +69,23 @@ namespace Qcode.Datos.Migrations
                     b.Property<DateTime>("FechaCrea")
                         .HasColumnType("datetime(6)");
 
+                    b.Property<byte[]>("Imagen")
+                        .IsRequired()
+                        .HasMaxLength(300000)
+                        .HasColumnType("longblob");
+
                     b.Property<string>("Marca")
                         .IsRequired()
                         .HasMaxLength(20)
                         .HasColumnType("varchar(20)");
 
-                    b.Property<string>("Modelo")
-                        .IsRequired()
-                        .HasMaxLength(20)
-                        .HasColumnType("varchar(20)");
+                    b.Property<int>("Modelo")
+                        .HasColumnType("int");
 
                     b.Property<string>("Placa")
                         .IsRequired()
                         .HasMaxLength(10)
                         .HasColumnType("varchar(10)");
-
-                    b.Property<string>("RutaImagen")
-                        .IsRequired()
-                        .HasMaxLength(200)
-                        .HasColumnType("varchar(200)");
 
                     b.HasKey("SerialVehiculo");
 

@@ -1,46 +1,79 @@
 <template>
-  <div>
+  <div class="container cont">
     <h1>Logeo</h1>
-    <div>
-      <label for="usuarioInput">Usuario: </label>
-      <input 
-        type="text" 
-        id="usuarioInput"
-        v-model="usuario.usuario" />
-    </div>
-    <div>
-      <label for="contrasenaInput">Contraseña: </label>
-      <input 
-        type="text" 
-        id="contrasenaInput" 
-        v-model="usuario.contrasena"/>
-    </div>
-    <div>
-      <button @click="Autenticar">Ingresar</button>
-    </div>
+    <form class="contForm">
+      <div class="form-group cont-padding">
+        <label for="usuarioInput">Usuario</label>
+        <div class="contInput">       
+          <input
+            class="form-control"
+            type="text"
+            id="usuarioInput"
+            v-model="autenticar.usuario"
+          />
+        </div>
+      </div>
+      <div class="form-group cont-padding">
+        <label for="contrasenaInput">Contraseña</label>
+        <div class="contInput">
+          <input
+          class="form-control"
+          type="password"
+          id="contrasenaInput"
+          v-model="autenticar.contrasena"
+        />
+        </div>        
+      </div>
+      <button class="btn btn-primary" @click="IniciarSesion">Ingresar</button>
+    </form>
   </div>
 </template>
 
 <script>
-import UsaAxios from "@/services/Axios";
-import { Console } from "console";
+import utilidades from "@/services/Axios";
+
 export default {
-  name: "ViewLogeo",
+  name: "LogeoPrincipal",
   data() {
     return {
-        usuario:{}
+      autenticar: {
+        usuario: "",
+        contrasena: "",
+      },
+      valor: true,
     };
   },
   methods: {
-    Autenticar() {
-      if (this.usuario) {
-        UsaAxios.post("", usuario).then((respuesta) => {
-          console.log(respuesta);
-        });
+    IniciarSesion() {
+      if (this.autenticar.usuario != "") {
+        utilidades
+          .post(
+            `Autenticacion/Autenticar`,this.autenticar)
+          .then((respuesta) => {
+            this.$emit("logeo-inicio", this.valor);
+            window.localStorage.setItem("token", respuesta.data.token.result);
+            this.$router.push({ path: "/" });
+          })
+          .catch((error) => {
+            console.log("error: " + error);
+          });
       }
     },
   },
 };
 </script>
 
-<style></style>
+<style>
+.contForm{  
+  padding: 10px;
+  text-align: center;
+  width: 200px;
+  margin: auto;
+  border-radius: 10px;
+  border: 2px solid black;
+}
+.contInput{
+  padding: 5px;
+}
+
+</style>

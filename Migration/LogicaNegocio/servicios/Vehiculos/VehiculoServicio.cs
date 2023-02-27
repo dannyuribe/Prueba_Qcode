@@ -4,9 +4,11 @@ using Qcode.Datos.Modelos;
 using Qcode.Datos.repositorio.Generico;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Net.Mime.MediaTypeNames;
 
 
 namespace Qcode.BusinessLogic.servicios.Vehiculos
@@ -28,23 +30,48 @@ namespace Qcode.BusinessLogic.servicios.Vehiculos
                 throw new Exception("error al Guardar, no se encontraron datos.");
             }
             
-            vehiculo.Costo= CalcularVehiculoCosto(vehiculo);
-            vehiculo.FechaCrea = DateTime.Now;
-
+            vehiculo.Costo= CalcularVehiculoCosto(vehiculo.Modelo);
+            vehiculo.Imagen = System.Text.Encoding.ASCII.GetBytes("");
             await _repositorioVehiculo.Agregar(vehiculo);
         }
+        public async Task AgregarImegenVehiculo(byte[] imagenVehiculo,string serialVehiculo)
+        {
+            try
+            {
+                if(imagenVehiculo == null)
+                {
+                    throw new Exception("No se cargo el archivo");
+                }
+                if (string.IsNullOrEmpty(serialVehiculo))
+                {
+                    throw new Exception("No se cargo el serial del vehiculo.");
+                }
 
-        private decimal CalcularVehiculoCosto(Vehiculo vehiculo)
+                Vehiculo vehiculo = await _repositorioVehiculo.ObtenerRegistroPorCondicion(x => x.SerialVehiculo == serialVehiculo && x.Activo==true);
+
+                if(vehiculo!= null)
+                {
+                    vehiculo.Imagen = imagenVehiculo;
+                    await _repositorioVehiculo.Actualizar(vehiculo);
+                }             
+            }
+            catch(Exception ex)
+            {
+                throw new Exception("Error al Guardar imagen del vehiculo.");
+            }
+        }
+
+        private decimal CalcularVehiculoCosto(int año)
         {
             double costo = 200000;
-            int dia = vehiculo.FechaCrea.Day;
+            int dia = DateTime.Now.Day;
             
             if(dia % 2 == 0)
             {
                 costo += costo * (0.05);
             }
 
-            if(int.Parse(vehiculo.Modelo)<=1997) 
+            if(año<=1997) 
             {
                 costo += costo * (0.2);
             }
@@ -72,13 +99,13 @@ namespace Qcode.BusinessLogic.servicios.Vehiculos
                         SerialVehiculo = worksheet.Cell(i, 1).Value.ToString() ?? string.Empty,
                         Placa = worksheet.Cell(i, 2).Value.ToString() ?? string.Empty,
                         Marca = worksheet.Cell(i, 3).Value.ToString() ?? string.Empty,
-                        RutaImagen = worksheet.Cell(i, 5).Value.ToString() ?? string.Empty,
-                        Modelo = worksheet.Cell(i, 4).Value.ToString() ?? string.Empty,
+                        Modelo = int.Parse(worksheet.Cell(i, 4).Value.ToString()),
+                        Imagen = System.Text.Encoding.ASCII.GetBytes(""),
                         FechaCrea = DateTime.Now,
                         Activo = true,
                         Costo = 200000 
                     };
-                    vehiculo.Costo= CalcularVehiculoCosto(vehiculo);
+                    vehiculo.Costo= CalcularVehiculoCosto(vehiculo.Modelo);
                     vehiculos.Add(vehiculo);
                 }
 
@@ -134,6 +161,10 @@ namespace Qcode.BusinessLogic.servicios.Vehiculos
             Vehiculo vehiculo = await _repositorioVehiculo.ObtenerPorId(serialVehiculo);
             return vehiculo;
         }
-       
+
+        public async Task<List<Vehiculo>> ObtenerVehiculos()
+        {
+            return await _repositorioVehiculo.ObtenerRegistrosPorCondicion(x => x.Activo != false);
+        }
     }
 }

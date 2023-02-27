@@ -22,11 +22,6 @@ namespace Qcode.Datos.repositorio.Generico
             _dbSet = _dbContext.Set<T>();
         }
 
-        public IEnumerable<T> ObtenerTodos()
-        { 
-            return _dbSet.AsQueryable();
-        }
-
         public async Task<T> ObtenerPorId(string id)
         {
             return await _dbSet.FindAsync(id);

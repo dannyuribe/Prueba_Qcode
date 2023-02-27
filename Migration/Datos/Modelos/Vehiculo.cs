@@ -1,6 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Runtime.CompilerServices;
+using System.Text.Json.Serialization;
 
 namespace Qcode.Datos.Modelos
 {
@@ -14,15 +15,14 @@ namespace Qcode.Datos.Modelos
         public string Placa { get; set; }
         [StringLength(20)]
         public string Marca { get; set; }
-        [StringLength(20)]
-        public string Modelo { get; set; }
+        public int Modelo { get; set; }
         [Required]
         public DateTime FechaCrea { get; set; }
         [Required]
         public bool Activo { get; set; }
-        [StringLength(200)]
-        public string RutaImagen { get; set; }
         [Column(TypeName ="decimal(53,1)")]
         public decimal Costo { get; set; }
+        [MaxLength(300000)]
+        public byte[]? Imagen { get; set; }
     }
 }

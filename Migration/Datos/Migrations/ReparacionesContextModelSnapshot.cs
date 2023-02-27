@@ -66,25 +66,23 @@ namespace Qcode.Datos.Migrations
                     b.Property<DateTime>("FechaCrea")
                         .HasColumnType("datetime(6)");
 
+                    b.Property<byte[]>("Imagen")
+                        .IsRequired()
+                        .HasMaxLength(300000)
+                        .HasColumnType("longblob");
+
                     b.Property<string>("Marca")
                         .IsRequired()
                         .HasMaxLength(20)
                         .HasColumnType("varchar(20)");
 
-                    b.Property<string>("Modelo")
-                        .IsRequired()
-                        .HasMaxLength(20)
-                        .HasColumnType("varchar(20)");
+                    b.Property<int>("Modelo")
+                        .HasColumnType("int");
 
                     b.Property<string>("Placa")
                         .IsRequired()
                         .HasMaxLength(10)
                         .HasColumnType("varchar(10)");
-
-                    b.Property<string>("RutaImagen")
-                        .IsRequired()
-                        .HasMaxLength(200)
-                        .HasColumnType("varchar(200)");
 
                     b.HasKey("SerialVehiculo");
 

@@ -1,26 +1,31 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div class="container text-center">
+      <MenuComponent :login="logeado"></MenuComponent>
+      <hr/>
+      <router-view @logeo-inicio="valida"></router-view>
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import MenuComponent from "@/components/Menu.Component.vue";
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    HelloWorld
-  }
-}
+    MenuComponent,
+  },
+  data() {
+    return {
+      logeado:false
+    }
+  },
+  created() {
+    console.log("logeado: "+ this.logeado);
+  },
+  methods: {
+    valida(valor){
+      console.log("Este-valor:"+valor);
+      this.logeado=valor;
+    }
+  },
+};
 </script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>

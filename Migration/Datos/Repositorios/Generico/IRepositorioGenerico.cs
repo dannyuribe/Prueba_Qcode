@@ -11,7 +11,6 @@ namespace Qcode.Datos.repositorio.Generico
 {
     public interface IRepositorioGenerico<T> where T : class
     {
-        IEnumerable<T> ObtenerTodos();
         Task<T> ObtenerPorId(String id);
         Task Agregar(T entity);
         Task Actualizar(T entity);

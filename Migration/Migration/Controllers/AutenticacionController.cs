@@ -15,7 +15,7 @@ namespace Qcode.Api.Controllers
            _jwtAutenticacionServicio = jwtAutenticacionServicio;
         }
 
-        [HttpPost("authenticate")]
+        [HttpPost("Autenticar")]
         public IActionResult Autenticacion(string usuario,string contrasena)
         {
             var token = _jwtAutenticacionServicio.Autenticacion(usuario, contrasena);
