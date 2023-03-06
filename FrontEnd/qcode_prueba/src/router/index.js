@@ -4,7 +4,7 @@ import Base from "@/views/Vehiculo/VehiculoBase.vue";
 const routes = [
   {
     path: "/",
-    name: "",
+    name: "ViewHome",
     component: () => import("@/views/pageHome/Home.vue"),
   },
   {
@@ -25,9 +25,14 @@ const routes = [
             path:'detalle/:id',
             name:'VehiculoDetalle',
             component: () => import("@/views/Vehiculo/VehiculoDetalle.vue")
-        }
+        },
+        {
+          path: "CargaMasiva",
+          name: "VehiculoCargaMasiva",
+          component: () => import("@/views/Vehiculo/VehiculoCargaMasiva.vue"),
+        },
     ],
-},
+}
 ];
 const router = createRouter({
   history: createWebHashHistory(),

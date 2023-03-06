@@ -2,11 +2,12 @@ import axios from "axios";
 
 export default class Utilidades{
 
-  static Post(url,data){
+  static Post(url,data,params){
     return axios({
       method:"POST",
       url: `http://localhost:5109/${url}`,
 			data: data,
+      params:params,
       headers:{
         'Authorization': 'Bearer '+window.localStorage.getItem("token"),
         'Referrer-Policy': 'no-referrer',   
@@ -28,12 +29,11 @@ export default class Utilidades{
     })
   }
 
-  static PostArchivo(url,data,params){
+  static PostArchivo(url,data){
     return axios({
       method:"POST",
       url: `http://localhost:5109/${url}`,
 			data: data,
-      params:params,
       headers:{
         'Authorization': 'Bearer '+window.localStorage.getItem("token"),
         'Referrer-Policy': 'no-referrer',   

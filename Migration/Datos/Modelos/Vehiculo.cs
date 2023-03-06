@@ -19,8 +19,7 @@ namespace Qcode.Datos.Modelos
         public bool Activo { get; set; }
         [Column(TypeName ="decimal(53,1)")]
         public decimal Costo { get; set; }
-        [JsonIgnore]
-        [MaxLength(300000)]
-        public byte[]? Imagen { get; set; }
+        [StringLength(200)]
+        public string rutaImagen { get; set; }
     }
 }

@@ -4,7 +4,7 @@
             <li class="nav-item">
                 <router-link 
                     class="nav-link active"
-                    :to="{ name: 'VehiculoPrincipal' }"
+                    :to="{ name: 'ViewHome' }"
                 >QCode</router-link>
             </li > 
             <li 
@@ -22,7 +22,10 @@
                 >Vehiculos</router-link>
             </li>  
             <li v-if="login">
-                <router-link to="/">Carga Masiva</router-link>
+                <router-link 
+                    class="nav-link"
+                    :to="{ name: 'VehiculoCargaMasiva' }"
+                >Carga Masiva</router-link>
             </li>           
         </ul>
     </div>

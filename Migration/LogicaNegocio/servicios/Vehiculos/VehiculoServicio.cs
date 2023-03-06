@@ -31,14 +31,13 @@ namespace Qcode.BusinessLogic.servicios.Vehiculos
             }
             
             vehiculo.Costo= CalcularVehiculoCosto(vehiculo.Modelo);
-            vehiculo.Imagen = System.Text.Encoding.ASCII.GetBytes("");
             await _repositorioVehiculo.Agregar(vehiculo);
         }
-        public async Task AgregarImegenVehiculo(byte[] imagenVehiculo,string serialVehiculo)
+        public async Task AgregarImegenVehiculo(string RutaImagen,string serialVehiculo)
         {
             try
             {
-                if(imagenVehiculo == null)
+                if(string.IsNullOrEmpty(RutaImagen))
                 {
                     throw new Exception("No se cargo el archivo");
                 }
@@ -49,9 +48,9 @@ namespace Qcode.BusinessLogic.servicios.Vehiculos
 
                 Vehiculo vehiculo = await _repositorioVehiculo.ObtenerRegistroPorCondicion(x => x.SerialVehiculo == serialVehiculo && x.Activo==true);
 
-                if(vehiculo!= null)
+                if (vehiculo!= null)
                 {
-                    vehiculo.Imagen = imagenVehiculo;
+                    vehiculo.rutaImagen = RutaImagen;
                     await _repositorioVehiculo.Actualizar(vehiculo);
                 }             
             }
@@ -100,7 +99,7 @@ namespace Qcode.BusinessLogic.servicios.Vehiculos
                         Placa = worksheet.Cell(i, 2).Value.ToString() ?? string.Empty,
                         Marca = worksheet.Cell(i, 3).Value.ToString() ?? string.Empty,
                         Modelo = int.Parse(worksheet.Cell(i, 4).Value.ToString()),
-                        Imagen = System.Text.Encoding.ASCII.GetBytes(""),
+                        rutaImagen = string.Empty,
                         FechaCrea = DateTime.Now,
                         Activo = true,
                         Costo = 200000 

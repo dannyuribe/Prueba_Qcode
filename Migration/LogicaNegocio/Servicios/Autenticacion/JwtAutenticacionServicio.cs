@@ -28,5 +28,10 @@ namespace Qcode.BusinessLogic.Servicios.Autenticacion
             }
             return await _jwtTokenServicio.GenerarToken(Empleado.IdEmpleado);
         }
+
+        public async Task ValidarToken(string token)
+        {
+            await _jwtTokenServicio.ValidarToken(token);
+        }
     }
 }

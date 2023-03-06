@@ -1,3 +1,4 @@
+using Google.Protobuf.WellKnownTypes;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
@@ -34,6 +35,10 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+// autenticacion esquema 
+
+
 // DbConnection
 
 builder.Services.AddSingleton<IConfiguration>(builder.Configuration);
@@ -46,7 +51,25 @@ builder.Services.AddTransient<IVehiculoServicio, VehiculoServicio>();
 //Jwt
 builder.Services.AddScoped<IJwtAutenticacionServicio, JwtAutenticacionServicio>();
 builder.Services.AddScoped<IJwtTokenServicio, JwtTokenServicio>();
-
+builder.Services.AddAuthentication(options =>
+{
+    options.DefaultAuthenticateScheme =JwtBearerDefaults.AuthenticationScheme;
+    options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+})
+    .AddJwtBearer(options =>
+    {
+        options.RequireHttpsMetadata = false;
+        options.SaveToken = true;
+        options.TokenValidationParameters = new TokenValidationParameters
+        {
+            ValidateIssuer = true,
+            ValidateLifetime = true,
+            ValidateIssuerSigningKey = true,
+            ValidateAudience = false,
+            ValidIssuer = builder.Configuration["Jwt:Issuer"],
+            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"]))
+        };
+    });
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();

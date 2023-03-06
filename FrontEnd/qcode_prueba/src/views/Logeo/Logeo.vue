@@ -37,8 +37,8 @@ export default {
   data() {
     return {
       autenticar: {
-        usuario: "",
-        contrasena: "",
+        usuario: null,
+        contrasena: null,
       },
       valor: true,
     };
@@ -46,8 +46,7 @@ export default {
   methods: {
     IniciarSesion() {
       if (this.autenticar.usuario != "") {
-        utilidades
-          .post(
+        utilidades.Post(
             `Autenticacion/Autenticar`,this.autenticar)
           .then((respuesta) => {
             this.$emit("logeo-inicio", this.valor);

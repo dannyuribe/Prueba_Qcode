@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Qcode.BusinessLogic.Interfaces;
+using Qcode.Datos.Modelos;
 
 namespace Qcode.Api.Controllers
 {
@@ -16,9 +17,9 @@ namespace Qcode.Api.Controllers
         }
 
         [HttpPost("Autenticar")]
-        public IActionResult Autenticacion(string usuario,string contrasena)
+        public IActionResult Autenticacion([FromBody]Autenticacion autentica)
         {
-            var token = _jwtAutenticacionServicio.Autenticacion(usuario, contrasena);
+            var token = _jwtAutenticacionServicio.Autenticacion(autentica.usuario, autentica.contrasena);
 
             if (token == null)
             {
@@ -27,5 +28,14 @@ namespace Qcode.Api.Controllers
 
             return Ok(new { Token = token });
         }
+
+        [HttpPost("Validar-Token")]
+        public async Task<IActionResult> ValidarToken(string token)
+        {
+            await _jwtAutenticacionServicio.ValidarToken(token);
+            return Ok();
+        }
     }
+
+
 }

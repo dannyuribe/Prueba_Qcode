@@ -36,20 +36,21 @@
                     </div>
                     <div class="col-12">
                         <label for="formFile" class="form-label">Imagen</label>
-                        <input class="form-control" type="file" id="formFile" accept=".jpg, .jpeg" @change="CargarImagen">
+                        <input class="form-control" type="file" id="formFile" ref="archivo" accept=".jpg, .jpeg"
+                            @change="CargarImagen">
                     </div>
                 </div>
             </div>
             <div class="contImagen cols">
                 <h5>Imagen Vehiculo</h5>
-                <img v-if="editar && ruta !== undefined" :src="ruta" class="imagen img-fluid rounded-start">
-                <img v-else-if="ruta === undefined" src="@/assets/logo.png" class="imagen img-fluid rounded-start">
-                <img v-else :src="ruta" class="imagen img-fluid rounded-start">
+                <img v-if="editar && urlImagen !== undefined" :src="urlImagen" class="imagen img-fluid rounded-start">
+                <img v-else-if="urlImagen === undefined" src="@/assets/logo.png" class="imagen img-fluid rounded-start">
+                <img v-else :src="urlImagen" class="imagen img-fluid rounded-start">
 
             </div>
             <div class="container text-center">
                 <button v-if="editar" class="btn btn-primary">Editar</button>
-                <button v-else class="btn btn-primary " @click="GuardarImagenVehiculo">Crear</button>
+                <button v-else class="btn btn-primary " @click="GuardarVehiculo">Crear</button>
             </div>
         </div>
     </div>
@@ -77,25 +78,29 @@ export default {
         return {
             vehiculo: {},
             editar: false,
-            ruta: ""
+            archivo: null,
+            urlImagen: null
         }
     },
     created() {
     },
     methods: {
         CargarImagen(event) {
-            if (event.target.files && event.target.files[0]) {
+            this.archivo = event.target.files[0];
+            console.log(this.archivo);
 
-                const lector = new FileReader();
-
-                lector.onload = (e) => {
-                    this.ruta = e.target.result;
-                    const arrayBuffer = e.target.result;
-                    const bytes = new Uint8Array(arrayBuffer);
-                    this.vehiculo.rutaImagen = bytes;
-                };
-                lector.readAsDataURL(event.target.files[0]);
+            if (!this.archivo) {
+                console.error("No se ha seleccionado ningún archivo");
+                return;
             }
+
+            const lectorArchivo = new FileReader();
+            lectorArchivo.readAsDataURL(this.archivo);
+
+            lectorArchivo.onload = () => {
+                this.urlImagen = lectorArchivo.result;
+                console.log("ruta del archivo:" + this.urlImagen);
+            };
         },
         CargarVehiculo(serialVehiculo) {
             console.log("entro");
@@ -105,30 +110,11 @@ export default {
             utilidades.Get("Vehiculos/obtener-vehiculo", serial)
                 .then((respuesta) => {
                     this.vehiculo = respuesta.data;
+                    this.CargarImagen(this.vehiculo.rutaImagen);
                 })
                 .catch((error) => {
                     console.log("error: " + error);
                 })
-        },
-        GuardarImagenVehiculo(){
-            if(this.ruta!== null && this.ruta !== undefined){
-                const byteCharacters = atob(this.ruta.split(',')[1]);
-const byteNumbers = new Array(byteCharacters.length);
-for (let i = 0; i < byteCharacters.length; i++) {
-  byteNumbers[i] = byteCharacters.charCodeAt(i);
-}
-const byteArray = new Uint8Array(byteNumbers);
-                const formData = new FormData();
-                formData.append('archivo', byteArray);
-                formData.append('serialVehiculo', this.vehiculo.serialVehiculo);
-
-                utilidades.PostArchivo("Vehiculos/cargar-imagen-vehiculo",formData)
-                .then((respuesta)=>{
-                    console.log("respuesta: "+ respuesta);
-                }).catch((error)=>{
-                    console.log("error:"+ error);
-                })
-            }
         },
         GuardarVehiculo() {
             let datos = {
@@ -139,18 +125,21 @@ const byteArray = new Uint8Array(byteNumbers);
                 FechaCrea: new Date(),
                 Activo: true,
                 Costo: 0
-            }           
-
-            if (this.vehiculo != undefined) {
-                utilidades.Post("Vehiculos/cargar-vehiculo", datos)
-                    .then((respuesta) => {
-                        console.log(respuesta.data);
-                       // this.GuardarImagenVehiculo(this.ruta);
-                    })
-                    .catch((error) => {
-                        console.log("error:" + error);
-                    });
             }
+            if (!this.archivo) {
+                console.log("no hay archivo seleccionado.");
+                return;
+            }
+            const formData = new FormData();
+            formData.append('archivo', this.archivo);
+            formData.append('vehiculo', datos);
+
+            utilidades.PostArchivo("Vehiculos/cargar-vehiculo" ,formData)
+                .then((respuesta) => {
+                    console.log("respuesta: " + respuesta);
+                }).catch((error) => {
+                    console.log("error:" + error);
+                });            
         }
     },
 }

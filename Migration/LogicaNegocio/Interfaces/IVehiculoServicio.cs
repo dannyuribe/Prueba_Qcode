@@ -12,11 +12,12 @@ namespace Qcode.BusinessLogic.Interfaces
     public interface IVehiculoServicio
     {
         Task AgregarVehiculo(Vehiculo vehiculo);
-        Task AgregarImegenVehiculo(byte[] imagenVehiculo,string serialVehiculo);
+        Task AgregarImegenVehiculo(string rutaImagen,string serialVehiculo);
         Task CargarVehiculos(Stream archivoExcel);
         Task EditarVehiculo(Vehiculo vehiculo);
         Task<Vehiculo> ObtenerVehiculoPorSerial(String id);
         Task<List<Vehiculo>> ObtenerVehiculos();
+        //Task<byte[]> ObtenerImagenVehiculos(String serialVehiculo);
 
     }
 }
