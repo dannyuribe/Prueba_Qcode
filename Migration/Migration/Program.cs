@@ -6,6 +6,7 @@ using Microsoft.IdentityModel.Tokens;
 using Qcode.BusinessLogic.Interfaces;
 using Qcode.BusinessLogic.servicios.Vehiculos;
 using Qcode.BusinessLogic.Servicios.Autenticacion;
+using Qcode.BusinessLogic.Servicios.Empleados;
 using Qcode.Datos.Contexto;
 using Qcode.Datos.Modelos;
 using Qcode.Datos.repositorio.Generico;
@@ -44,9 +45,10 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddSingleton<IConfiguration>(builder.Configuration);
 var cadenaConexion = builder.Configuration.GetConnectionString("MySqlConnection");
 builder.Services.AddDbContext<ReparacionesContext>(options => options.UseMySQL(cadenaConexion));
-builder.Services.AddTransient(typeof(IRepositorioGenerico<>), typeof(RepositorioGenerico<>));
 
+builder.Services.AddTransient(typeof(IRepositorioGenerico<>), typeof(RepositorioGenerico<>));
 builder.Services.AddTransient<IVehiculoServicio, VehiculoServicio>();
+builder.Services.AddTransient<IEmpleadoServicio, EmpleadoServicio>();
 
 //Jwt
 builder.Services.AddScoped<IJwtAutenticacionServicio, JwtAutenticacionServicio>();

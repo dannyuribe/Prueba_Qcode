@@ -49,5 +49,10 @@ namespace Qcode.Datos.repositorio.Generico
         {
             return _dbContext.Database.BeginTransaction();
         }
+
+        public async Task<List<T>> ObtenerRegistros()
+        {
+            return await _dbContext.Set<T>().ToListAsync();
+        }
     }
 }

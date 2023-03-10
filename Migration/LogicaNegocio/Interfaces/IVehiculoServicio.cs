@@ -17,7 +17,6 @@ namespace Qcode.BusinessLogic.Interfaces
         Task EditarVehiculo(Vehiculo vehiculo);
         Task<Vehiculo> ObtenerVehiculoPorSerial(String id);
         Task<List<Vehiculo>> ObtenerVehiculos();
-        //Task<byte[]> ObtenerImagenVehiculos(String serialVehiculo);
 
     }
 }

@@ -1,4 +1,6 @@
-﻿using Qcode.Datos.Modelos;
+﻿
+
+using Qcode.Datos.Modelos;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using System.ComponentModel.DataAnnotations;
