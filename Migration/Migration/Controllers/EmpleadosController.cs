@@ -4,7 +4,7 @@ using Qcode.BusinessLogic.Interfaces;
 using Qcode.Datos.Modelos;
 
 namespace Qcode.Api.Controllers
-{
+{ 
     [Route("/[controller]")]
     [ApiController]
     public class EmpleadosController : ControllerBase
