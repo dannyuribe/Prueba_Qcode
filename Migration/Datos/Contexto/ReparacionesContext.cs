@@ -17,6 +17,7 @@ namespace Qcode.Datos.Contexto
         public virtual DbSet<Vehiculo> Vehiculos { get; set; }
         public virtual DbSet<TipoUsuario> TipoUsuarios { get; set; }
         public virtual DbSet<Logeos> legeos { get; set; }
+        public virtual DbSet<ActivarUsuarioLogeo> ActivarUsuarioLogeos { get; set; }
 
     }
 }

@@ -51,7 +51,7 @@ builder.Services.AddTransient(typeof(IRepositorioGenerico<>), typeof(Repositorio
 builder.Services.AddTransient<IVehiculoServicio, VehiculoServicio>();
 builder.Services.AddTransient<IUsuarioServicio, UsuarioServicio>();
 builder.Services.AddTransient<ITipoUsuarioServicio, TipoUsuarioServicio>();
-builder.Services.AddTransient<ILogeoServicio, LogeoServicio>();
+builder.Services.AddTransient<IRegistroLogeoServicio, RegistroLogeoServicio>();
 
 //Jwt
 builder.Services.AddScoped<IJwtAutenticacionServicio, JwtAutenticacionServicio>();
