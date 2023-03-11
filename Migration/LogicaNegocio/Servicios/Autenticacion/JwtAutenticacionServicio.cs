@@ -13,14 +13,16 @@ namespace Qcode.BusinessLogic.Servicios.Autenticacion
     {
         private readonly IRepositorioGenerico<Logeos> _repositorioLogeos;
         private readonly IJwtTokenServicio _jwtTokenServicio;
-        public JwtAutenticacionServicio(IRepositorioGenerico<Logeos> repositorioLogeos, IJwtTokenServicio jwtTokenServicio)
+        public JwtAutenticacionServicio(
+            IRepositorioGenerico<Logeos> repositorioLogeos, 
+            IJwtTokenServicio jwtTokenServicio)
         {
             _repositorioLogeos = repositorioLogeos;
             _jwtTokenServicio = jwtTokenServicio;
         }
         public async Task<string> Autenticacion(string correo, string contrasena)
         {
-            var usuario = await _repositorioLogeos.ObtenerRegistroPorCondicion(x => x.Correo == correo && x.Contrasena == contrasena);
+            var usuario = await _repositorioLogeos.ObtenerRegistroPorCondicion(x => x.Correo == correo && x.Contrasena == contrasena && x.estado == true);
 
             if(usuario == null)
             {

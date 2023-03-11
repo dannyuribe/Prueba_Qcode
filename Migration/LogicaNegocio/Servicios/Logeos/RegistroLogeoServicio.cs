@@ -36,7 +36,7 @@ namespace Qcode.BusinessLogic.Servicios.RegistroUsuarioLogeos
                 using var transacion = await _RepositorioActivarUsuarioLogeo.BeginTransaction();
                 ActivarUsuarioLogeo activarUsuario =
                     await _RepositorioActivarUsuarioLogeo.ObtenerRegistroPorCondicion(x =>                        
-                        x.CodigoActivacion == codigoActivacion);
+                        x.CodigoActivacion == codigoActivacion && x.estado != false);
 
                 if (activarUsuario == null)
                 {
@@ -45,8 +45,8 @@ namespace Qcode.BusinessLogic.Servicios.RegistroUsuarioLogeos
 
                 Usuario usuario = new()
                 {
-                    IdUsuario = activarUsuario.IdUsuario,
-                    IdTipoUsuario = activarUsuario.IdTipoUsuario,
+                    IdUsuario = activarUsuario.Documento,
+                    IdTipoUsuario = 1,//se debe modificar dependiendo el uso de la APP
                     Nombre = activarUsuario.Nombre,
                     Apellido = activarUsuario.Apellido,                    
                     Telefono = activarUsuario.Telefono,
@@ -55,9 +55,10 @@ namespace Qcode.BusinessLogic.Servicios.RegistroUsuarioLogeos
 
                 Logeos logeo = new()
                 {
-                    IdUsuario = activarUsuario.IdUsuario,
+                    IdUsuario = activarUsuario.Documento,
                     Correo = activarUsuario.Correo,
                     Contrasena = activarUsuario.Contrasena,
+                    estado = true,
                     FechaCrea = DateTime.Now
                 };
                 await _RepositorioUsuarios.Agregar(usuario);

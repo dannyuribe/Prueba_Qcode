@@ -9,7 +9,7 @@
             class="form-control"
             type="text"
             id="usuarioInput"
-            v-model="autenticar.logeo"
+            v-model="autenticar.correo"
           />
         </div>
       </div>
@@ -37,7 +37,7 @@ export default {
   data() {
     return {
       autenticar: {
-        logeo: null,
+        correo: null,
         contrasena: null,
       },
       valor: true,
@@ -47,7 +47,7 @@ export default {
     IniciarSesion() {
       if (this.autenticar.usuario != "") {
         const formData = new FormData();
-            formData.append('logeo', this.autenticar.logeo);
+            formData.append('correo', this.autenticar.correo);
             formData.append('contrasena', this.autenticar.contrasena);
         utilidades.PostArchivo(
             `Autenticacion/Autenticar`,formData)

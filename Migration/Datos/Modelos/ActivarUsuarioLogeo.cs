@@ -11,8 +11,7 @@ namespace Qcode.Datos.Modelos
     public class ActivarUsuarioLogeo
     {
         [Key]
-        public string IdUsuario { get; set; }
-        public int IdTipoUsuario { get; set; }
+        public string Documento { get; set; }
         [Required]
         [StringLength(50)]
         public string Nombre { get; set; }
@@ -26,9 +25,6 @@ namespace Qcode.Datos.Modelos
         public string Telefono { get; set; }
         [Required]
         public DateTime FechaCrea { get; set; }
-        [Required]
-        [StringLength(50)]
-        public string Logeo { get; set; }
         [Required]
         [StringLength(200)]
         public string Contrasena { get; set; }

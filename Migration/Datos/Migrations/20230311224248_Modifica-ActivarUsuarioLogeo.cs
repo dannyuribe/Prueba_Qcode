@@ -7,7 +7,7 @@ using MySql.EntityFrameworkCore.Metadata;
 namespace Qcode.Datos.Migrations
 {
     /// <inheritdoc />
-    public partial class Primera : Migration
+    public partial class ModificaActivarUsuarioLogeo : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -19,21 +19,19 @@ namespace Qcode.Datos.Migrations
                 name: "ActivarUsuarioLogeos",
                 columns: table => new
                 {
-                    IdUsuario = table.Column<string>(type: "varchar(255)", nullable: false),
-                    IdTipoUsuario = table.Column<int>(type: "int", nullable: false),
+                    Documento = table.Column<string>(type: "varchar(255)", nullable: false),
                     Nombre = table.Column<string>(type: "varchar(50)", maxLength: 50, nullable: false),
                     Apellido = table.Column<string>(type: "varchar(50)", maxLength: 50, nullable: false),
                     Correo = table.Column<string>(type: "varchar(50)", maxLength: 50, nullable: false),
                     Telefono = table.Column<string>(type: "varchar(50)", maxLength: 50, nullable: false),
                     FechaCrea = table.Column<DateTime>(type: "datetime(6)", nullable: false),
-                    Logeo = table.Column<string>(type: "varchar(50)", maxLength: 50, nullable: false),
                     Contrasena = table.Column<string>(type: "varchar(200)", maxLength: 200, nullable: false),
                     estado = table.Column<bool>(type: "tinyint(1)", nullable: false),
                     CodigoActivacion = table.Column<string>(type: "longtext", nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_ActivarUsuarioLogeos", x => x.IdUsuario);
+                    table.PrimaryKey("PK_ActivarUsuarioLogeos", x => x.Documento);
                 })
                 .Annotation("MySQL:Charset", "utf8mb4");
 

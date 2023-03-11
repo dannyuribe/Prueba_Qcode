@@ -83,7 +83,6 @@ C:\Repositorios\Qcode\Migration\Migration\obj\Debug\net6.0\Qcode.Api.GeneratedMS
 C:\Repositorios\Qcode\Migration\Migration\obj\Debug\net6.0\Qcode.Api.AssemblyInfoInputs.cache
 C:\Repositorios\Qcode\Migration\Migration\obj\Debug\net6.0\Qcode.Api.AssemblyInfo.cs
 C:\Repositorios\Qcode\Migration\Migration\obj\Debug\net6.0\Qcode.Api.csproj.CoreCompileInputs.cache
-C:\Repositorios\Qcode\Migration\Migration\obj\Debug\net6.0\Qcode.Api.MvcApplicationPartsAssemblyInfo.cs
 C:\Repositorios\Qcode\Migration\Migration\obj\Debug\net6.0\Qcode.Api.MvcApplicationPartsAssemblyInfo.cache
 C:\Repositorios\Qcode\Migration\Migration\obj\Debug\net6.0\staticwebassets\msbuild.Qcode.Api.Microsoft.AspNetCore.StaticWebAssets.props
 C:\Repositorios\Qcode\Migration\Migration\obj\Debug\net6.0\staticwebassets\msbuild.build.Qcode.Api.props

@@ -21,7 +21,7 @@ namespace Qcode.Datos.Migrations
 
             modelBuilder.Entity("Qcode.Datos.Modelos.ActivarUsuarioLogeo", b =>
                 {
-                    b.Property<string>("IdUsuario")
+                    b.Property<string>("Documento")
                         .HasColumnType("varchar(255)");
 
                     b.Property<string>("Apellido")
@@ -45,14 +45,6 @@ namespace Qcode.Datos.Migrations
                     b.Property<DateTime>("FechaCrea")
                         .HasColumnType("datetime(6)");
 
-                    b.Property<int>("IdTipoUsuario")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Logeo")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("varchar(50)");
-
                     b.Property<string>("Nombre")
                         .IsRequired()
                         .HasMaxLength(50)
@@ -66,7 +58,7 @@ namespace Qcode.Datos.Migrations
                     b.Property<bool>("estado")
                         .HasColumnType("tinyint(1)");
 
-                    b.HasKey("IdUsuario");
+                    b.HasKey("Documento");
 
                     b.ToTable("ActivarUsuarioLogeos");
                 });
