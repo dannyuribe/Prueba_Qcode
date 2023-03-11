@@ -6,6 +6,7 @@ using Microsoft.IdentityModel.Tokens;
 using Qcode.BusinessLogic.Interfaces;
 using Qcode.BusinessLogic.servicios.Vehiculos;
 using Qcode.BusinessLogic.Servicios.Autenticacion;
+using Qcode.BusinessLogic.Servicios.RegistroUsuarioLogeos;
 using Qcode.BusinessLogic.Servicios.TipoUsuarios;
 using Qcode.BusinessLogic.Servicios.Usuarios;
 using Qcode.Datos.Contexto;
@@ -50,6 +51,7 @@ builder.Services.AddTransient(typeof(IRepositorioGenerico<>), typeof(Repositorio
 builder.Services.AddTransient<IVehiculoServicio, VehiculoServicio>();
 builder.Services.AddTransient<IUsuarioServicio, UsuarioServicio>();
 builder.Services.AddTransient<ITipoUsuarioServicio, TipoUsuarioServicio>();
+builder.Services.AddTransient<ILogeoServicio, LogeoServicio>();
 
 //Jwt
 builder.Services.AddScoped<IJwtAutenticacionServicio, JwtAutenticacionServicio>();

@@ -1,8 +1,3 @@
-C:\Repositorios\Qcode\Migration\LogicaNegocio\obj\Debug\net6.0\Qcode.BusinessLogic.csproj.AssemblyReference.cache
-C:\Repositorios\Qcode\Migration\LogicaNegocio\obj\Debug\net6.0\Qcode.BusinessLogic.GeneratedMSBuildEditorConfig.editorconfig
-C:\Repositorios\Qcode\Migration\LogicaNegocio\obj\Debug\net6.0\Qcode.BusinessLogic.AssemblyInfoInputs.cache
-C:\Repositorios\Qcode\Migration\LogicaNegocio\obj\Debug\net6.0\Qcode.BusinessLogic.AssemblyInfo.cs
-C:\Repositorios\Qcode\Migration\LogicaNegocio\obj\Debug\net6.0\Qcode.BusinessLogic.csproj.CoreCompileInputs.cache
 C:\Repositorios\Qcode\Migration\LogicaNegocio\bin\Debug\net6.0\Qcode.Datos.deps.json
 C:\Repositorios\Qcode\Migration\LogicaNegocio\bin\Debug\net6.0\Qcode.Datos.runtimeconfig.json
 C:\Repositorios\Qcode\Migration\LogicaNegocio\bin\Debug\net6.0\Qcode.Datos.exe
@@ -63,6 +58,11 @@ C:\Repositorios\Qcode\Migration\LogicaNegocio\bin\Debug\net6.0\runtimes\win\lib\
 C:\Repositorios\Qcode\Migration\LogicaNegocio\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
 C:\Repositorios\Qcode\Migration\LogicaNegocio\bin\Debug\net6.0\Qcode.Datos.dll
 C:\Repositorios\Qcode\Migration\LogicaNegocio\bin\Debug\net6.0\Qcode.Datos.pdb
+C:\Repositorios\Qcode\Migration\LogicaNegocio\obj\Debug\net6.0\Qcode.BusinessLogic.csproj.AssemblyReference.cache
+C:\Repositorios\Qcode\Migration\LogicaNegocio\obj\Debug\net6.0\Qcode.BusinessLogic.GeneratedMSBuildEditorConfig.editorconfig
+C:\Repositorios\Qcode\Migration\LogicaNegocio\obj\Debug\net6.0\Qcode.BusinessLogic.AssemblyInfoInputs.cache
+C:\Repositorios\Qcode\Migration\LogicaNegocio\obj\Debug\net6.0\Qcode.BusinessLogic.AssemblyInfo.cs
+C:\Repositorios\Qcode\Migration\LogicaNegocio\obj\Debug\net6.0\Qcode.BusinessLogic.csproj.CoreCompileInputs.cache
 C:\Repositorios\Qcode\Migration\LogicaNegocio\obj\Debug\net6.0\Qcode.BusinessLogic.csproj.CopyComplete
 C:\Repositorios\Qcode\Migration\LogicaNegocio\obj\Debug\net6.0\Qcode.BusinessLogic.dll
 C:\Repositorios\Qcode\Migration\LogicaNegocio\obj\Debug\net6.0\refint\Qcode.BusinessLogic.dll
