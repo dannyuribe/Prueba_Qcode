@@ -16,9 +16,6 @@ namespace Qcode.Datos.Modelos
         [Required]
         [StringLength(50)]
         public string Apellido { get; set;}
-        [Required]
-        [StringLength(50)]
-        public string Correo { get; set; }
         [StringLength(50)]
         public string Telefono { get; set; }
         [Required]

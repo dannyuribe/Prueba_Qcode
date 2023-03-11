@@ -26,21 +26,16 @@ namespace Qcode.BusinessLogic.Servicios.RegistroUsuarioLogeos
             _RepositorioActivarUsuarioLogeo = repositorioActivarUsuarioLogeo;
         }
 
-        public async Task ActivarUsuarioLogeo(string correo, string codigoActivacion)
+        public async Task ActivarUsuarioLogeo(string codigoActivacion)
         {
             try {
-                if (string.IsNullOrEmpty(correo))
-                {
-                    throw new Exception("Debes ingresar el correo activar.");
-                }
                 if (string.IsNullOrEmpty(codigoActivacion))
                 {
                     throw new Exception("Debes ingresar el codigo de activacion.");
                 }
                 using var transacion = await _RepositorioActivarUsuarioLogeo.BeginTransaction();
                 ActivarUsuarioLogeo activarUsuario =
-                    await _RepositorioActivarUsuarioLogeo.ObtenerRegistroPorCondicion(x =>
-                        x.Correo == correo &&
+                    await _RepositorioActivarUsuarioLogeo.ObtenerRegistroPorCondicion(x =>                        
                         x.CodigoActivacion == codigoActivacion);
 
                 if (activarUsuario == null)
@@ -53,8 +48,7 @@ namespace Qcode.BusinessLogic.Servicios.RegistroUsuarioLogeos
                     IdUsuario = activarUsuario.IdUsuario,
                     IdTipoUsuario = activarUsuario.IdTipoUsuario,
                     Nombre = activarUsuario.Nombre,
-                    Apellido = activarUsuario.Apellido,
-                    Correo = activarUsuario.Correo,
+                    Apellido = activarUsuario.Apellido,                    
                     Telefono = activarUsuario.Telefono,
                     FechaCrea = DateTime.Now
                 };
@@ -62,7 +56,7 @@ namespace Qcode.BusinessLogic.Servicios.RegistroUsuarioLogeos
                 Logeos logeo = new()
                 {
                     IdUsuario = activarUsuario.IdUsuario,
-                    Logeo = activarUsuario.Logeo,
+                    Correo = activarUsuario.Correo,
                     Contrasena = activarUsuario.Contrasena,
                     FechaCrea = DateTime.Now
                 };
@@ -90,11 +84,11 @@ namespace Qcode.BusinessLogic.Servicios.RegistroUsuarioLogeos
                 throw new Exception("No se encontro informacion.");
             }
 
-            //validar que el correo no se encuentre registrado
-            Usuario usuario = await _RepositorioUsuarios.ObtenerRegistroPorCondicion(
+            //validar que el correo no se encuentre registrado como Usuario
+            Logeos logeo = await _RepositorioLogeos.ObtenerRegistroPorCondicion(
                 x => x.Correo == registroLogeo.Correo);
 
-            if(usuario != null)
+            if(logeo != null)
             {
                 throw new Exception("El Usuario ya se encuentra registrado.");
             }
@@ -107,7 +101,9 @@ namespace Qcode.BusinessLogic.Servicios.RegistroUsuarioLogeos
             }            
         }
 
-        //modificar estos metodos en una clase estatica 
+        
+        
+        //modificar estos metodos en una clase
         private string GenerarCodigoVerificacion()
         {
             return "Asdf";

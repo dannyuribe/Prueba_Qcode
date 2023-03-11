@@ -18,9 +18,9 @@ namespace Qcode.BusinessLogic.Servicios.Autenticacion
             _repositorioLogeos = repositorioLogeos;
             _jwtTokenServicio = jwtTokenServicio;
         }
-        public async Task<string> Autenticacion(string logeo, string contrasena)
+        public async Task<string> Autenticacion(string correo, string contrasena)
         {
-            var usuario = await _repositorioLogeos.ObtenerRegistroPorCondicion(x => x.Logeo == logeo && x.Contrasena == contrasena);
+            var usuario = await _repositorioLogeos.ObtenerRegistroPorCondicion(x => x.Correo == correo && x.Contrasena == contrasena);
 
             if(usuario == null)
             {

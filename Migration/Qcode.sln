@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Qcode.Datos", "Datos\Qcode.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Qcode.BusinessLogic", "LogicaNegocio\Qcode.BusinessLogic.csproj", "{8199FDCA-3764-4986-BB80-A05EAA7EA1B2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pruebas", "Pruebas\Pruebas.csproj", "{904CD26A-4CD0-47E9-B962-ED27485204A8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pruebas", "Pruebas\Pruebas.csproj", "{904CD26A-4CD0-47E9-B962-ED27485204A8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

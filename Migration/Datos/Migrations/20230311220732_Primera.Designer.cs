@@ -11,8 +11,8 @@ using Qcode.Datos.Contexto;
 namespace Qcode.Datos.Migrations
 {
     [DbContext(typeof(ReparacionesContext))]
-    [Migration("20230311033209_primero")]
-    partial class primero
+    [Migration("20230311220732_Primera")]
+    partial class Primera
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -21,6 +21,58 @@ namespace Qcode.Datos.Migrations
             modelBuilder
                 .HasAnnotation("ProductVersion", "7.0.3")
                 .HasAnnotation("Relational:MaxIdentifierLength", 64);
+
+            modelBuilder.Entity("Qcode.Datos.Modelos.ActivarUsuarioLogeo", b =>
+                {
+                    b.Property<string>("IdUsuario")
+                        .HasColumnType("varchar(255)");
+
+                    b.Property<string>("Apellido")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("varchar(50)");
+
+                    b.Property<string>("CodigoActivacion")
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("Contrasena")
+                        .IsRequired()
+                        .HasMaxLength(200)
+                        .HasColumnType("varchar(200)");
+
+                    b.Property<string>("Correo")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("varchar(50)");
+
+                    b.Property<DateTime>("FechaCrea")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<int>("IdTipoUsuario")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Logeo")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("varchar(50)");
+
+                    b.Property<string>("Nombre")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("varchar(50)");
+
+                    b.Property<string>("Telefono")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("varchar(50)");
+
+                    b.Property<bool>("estado")
+                        .HasColumnType("tinyint(1)");
+
+                    b.HasKey("IdUsuario");
+
+                    b.ToTable("ActivarUsuarioLogeos");
+                });
 
             modelBuilder.Entity("Qcode.Datos.Modelos.Logeos", b =>
                 {
@@ -33,6 +85,11 @@ namespace Qcode.Datos.Migrations
                         .HasMaxLength(200)
                         .HasColumnType("varchar(200)");
 
+                    b.Property<string>("Correo")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("varchar(50)");
+
                     b.Property<DateTime>("FechaCrea")
                         .HasColumnType("datetime(6)");
 
@@ -40,10 +97,8 @@ namespace Qcode.Datos.Migrations
                         .IsRequired()
                         .HasColumnType("varchar(255)");
 
-                    b.Property<string>("Logeo")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("varchar(50)");
+                    b.Property<bool>("estado")
+                        .HasColumnType("tinyint(1)");
 
                     b.HasKey("IdLogeo");
 
@@ -82,11 +137,6 @@ namespace Qcode.Datos.Migrations
                         .HasColumnType("varchar(255)");
 
                     b.Property<string>("Apellido")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("varchar(50)");
-
-                    b.Property<string>("Correo")
                         .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("varchar(50)");

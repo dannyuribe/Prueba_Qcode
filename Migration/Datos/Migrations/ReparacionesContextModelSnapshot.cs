@@ -30,7 +30,6 @@ namespace Qcode.Datos.Migrations
                         .HasColumnType("varchar(50)");
 
                     b.Property<string>("CodigoActivacion")
-                        .IsRequired()
                         .HasColumnType("longtext");
 
                     b.Property<string>("Contrasena")
@@ -83,6 +82,11 @@ namespace Qcode.Datos.Migrations
                         .HasMaxLength(200)
                         .HasColumnType("varchar(200)");
 
+                    b.Property<string>("Correo")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("varchar(50)");
+
                     b.Property<DateTime>("FechaCrea")
                         .HasColumnType("datetime(6)");
 
@@ -90,10 +94,8 @@ namespace Qcode.Datos.Migrations
                         .IsRequired()
                         .HasColumnType("varchar(255)");
 
-                    b.Property<string>("Logeo")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("varchar(50)");
+                    b.Property<bool>("estado")
+                        .HasColumnType("tinyint(1)");
 
                     b.HasKey("IdLogeo");
 
@@ -132,11 +134,6 @@ namespace Qcode.Datos.Migrations
                         .HasColumnType("varchar(255)");
 
                     b.Property<string>("Apellido")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("varchar(50)");
-
-                    b.Property<string>("Correo")
                         .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("varchar(50)");

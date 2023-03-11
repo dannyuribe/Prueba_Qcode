@@ -10,7 +10,7 @@ namespace Qcode.BusinessLogic.Interfaces
     public interface IRegistroLogeoServicio
     {
         Task RegistrarUsuarioLogeo(ActivarUsuarioLogeo logeo);
-        Task ActivarUsuarioLogeo(string correo,string codigoActivacion);
+        Task ActivarUsuarioLogeo(string codigoActivacion);
         Task RecuperarContrasena(string correo);
     }
 }

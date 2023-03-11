@@ -23,9 +23,9 @@ namespace Qcode.Api.Controllers
         }
 
         [HttpPost("activar-registro-logeo")]
-        public async Task<IActionResult> ActivarUsuarioLogeo([FromForm] string correo, [FromForm] string codigoActivacion)
+        public async Task<IActionResult> ActivarUsuarioLogeo([FromForm] string codigoActivacion)
         {
-            await _LogeoServicio.ActivarUsuarioLogeo(correo, codigoActivacion);
+            await _LogeoServicio.ActivarUsuarioLogeo(codigoActivacion);
             return Ok();
         }
     }
