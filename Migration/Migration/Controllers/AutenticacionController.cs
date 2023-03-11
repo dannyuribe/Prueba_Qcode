@@ -17,9 +17,9 @@ namespace Qcode.Api.Controllers
         }
 
         [HttpPost("Autenticar")]
-        public IActionResult Autenticacion([FromBody]Autenticacion autentica)
+        public async Task<IActionResult> Autenticacion([FromForm]string correo, [FromForm]string contrasena)
         {
-            var token = _jwtAutenticacionServicio.Autenticacion(autentica.usuario, autentica.contrasena);
+            var token = await _jwtAutenticacionServicio.Autenticacion(correo,contrasena);
 
             if (token == null)
             {

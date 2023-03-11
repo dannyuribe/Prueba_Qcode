@@ -137,7 +137,7 @@ namespace Qcode.BusinessLogic.servicios.Vehiculos
                     await _repositorioVehiculo.Actualizar(vehiculo);
                 }
 
-                transacion.CommitAsync();
+                await transacion.CommitAsync();
 
             }
             catch (Exception ex)

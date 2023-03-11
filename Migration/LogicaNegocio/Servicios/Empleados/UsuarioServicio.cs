@@ -8,51 +8,51 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Qcode.BusinessLogic.Servicios.Empleados
+namespace Qcode.BusinessLogic.Servicios.Usuarios
 {
-    public class EmpleadoServicio : IEmpleadoServicio
+    public class UsuarioServicio : IUsuarioServicio
     {
-        private readonly IRepositorioGenerico<Empleado> _RepositorioEmpleado;
-        public EmpleadoServicio(IRepositorioGenerico<Empleado> repositorioEmpleado)
+        private readonly IRepositorioGenerico<Usuario> _RepositorioUsuario;
+        public UsuarioServicio(IRepositorioGenerico<Usuario> repositorioEmpleado)
         {
-            _RepositorioEmpleado = repositorioEmpleado;
+            _RepositorioUsuario = repositorioEmpleado;
         }
-        public async Task AgregarEmpleado(Empleado empleado)
+        public async Task AgregarUsuario(Usuario empleado)
         {
             if(empleado == null)
             {
                 throw new Exception("No se encontraron datos.");
             }
 
-            await _RepositorioEmpleado.Agregar(empleado);
+            await _RepositorioUsuario.Agregar(empleado);
         }
 
-        public async Task EditarEmpleado(Empleado empleado)
+        public async Task EditarUsuario(Usuario empleado)
         {
             if (empleado == null)
             {
                 throw new Exception("No se encontraron datos.");
             }
 
-            await _RepositorioEmpleado.Actualizar(empleado);
+            await _RepositorioUsuario.Actualizar(empleado);
         }
 
-        public async Task<Empleado> ObtenerEmpleado(string idEmpleado)
+        public async Task<Usuario> ObtenerUsuarioPorId(string idEmpleado)
         {
             if (string.IsNullOrEmpty(idEmpleado))
             {
                 throw new Exception("Debes ingresar el id del Empleado.");
             }
-            return await _RepositorioEmpleado.ObtenerPorId(idEmpleado);
+            return await _RepositorioUsuario.ObtenerPorId(idEmpleado);
         }
 
-        public async Task<List<Empleado>> ObtenerEmpleadosPorPagina(int pagina)
+        public async Task<List<Usuario>> ObtenerUsuariosPorPagina(int pagina)
         {
             if(pagina < 0)
             {
                 throw new Exception("Numero pagina incorrecto");
             }
-            var empleado = await _RepositorioEmpleado.ObtenerRegistros();
+            var empleado = await _RepositorioUsuario.ObtenerRegistros();
 
             return empleado
                     .Skip(Constantes.TamañoMaxioPorPagina * pagina)
