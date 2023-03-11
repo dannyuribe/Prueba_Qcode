@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Qcode.Datos.Contexto;
 
@@ -10,9 +11,11 @@ using Qcode.Datos.Contexto;
 namespace Qcode.Datos.Migrations
 {
     [DbContext(typeof(ReparacionesContext))]
-    partial class ReparacionesContextModelSnapshot : ModelSnapshot
+    [Migration("20230311033209_primero")]
+    partial class primero
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -106,8 +109,6 @@ namespace Qcode.Datos.Migrations
 
                     b.HasKey("IdUsuario");
 
-                    b.HasIndex("IdTipoUsuario");
-
                     b.ToTable("Usuarios");
                 });
 
@@ -157,17 +158,6 @@ namespace Qcode.Datos.Migrations
                         .IsRequired();
 
                     b.Navigation("Usuario");
-                });
-
-            modelBuilder.Entity("Qcode.Datos.Modelos.Usuario", b =>
-                {
-                    b.HasOne("Qcode.Datos.Modelos.TipoUsuario", "TipoUsuarios")
-                        .WithMany()
-                        .HasForeignKey("IdTipoUsuario")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("TipoUsuarios");
                 });
 #pragma warning restore 612, 618
         }

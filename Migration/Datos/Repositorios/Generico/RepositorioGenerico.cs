@@ -54,5 +54,10 @@ namespace Qcode.Datos.repositorio.Generico
         {
             return await _dbContext.Set<T>().ToListAsync();
         }
+
+        public async Task<T> ObtenerPorId(int id)
+        {
+            return await _dbSet.FindAsync(id);
+        }
     }
 }

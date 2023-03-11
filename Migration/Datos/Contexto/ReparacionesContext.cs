@@ -13,7 +13,10 @@ namespace Qcode.Datos.Contexto
     {
 
         public ReparacionesContext(DbContextOptions<ReparacionesContext> options) : base(options) { }
-        public virtual DbSet<Empleado> Empleados { get; set; }
+        public virtual DbSet<Usuario> Usuarios { get; set; }
         public virtual DbSet<Vehiculo> Vehiculos { get; set; }
+        public virtual DbSet<TipoUsuario> TipoUsuarios { get; set; }
+        public virtual DbSet<Logeos> legeos { get; set; }
+
     }
 }

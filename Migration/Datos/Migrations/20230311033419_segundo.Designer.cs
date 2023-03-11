@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Qcode.Datos.Contexto;
 
@@ -10,9 +11,11 @@ using Qcode.Datos.Contexto;
 namespace Qcode.Datos.Migrations
 {
     [DbContext(typeof(ReparacionesContext))]
-    partial class ReparacionesContextModelSnapshot : ModelSnapshot
+    [Migration("20230311033419_segundo")]
+    partial class segundo
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

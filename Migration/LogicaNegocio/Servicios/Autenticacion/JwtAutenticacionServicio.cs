@@ -11,22 +11,22 @@ namespace Qcode.BusinessLogic.Servicios.Autenticacion
 {
     public class JwtAutenticacionServicio : IJwtAutenticacionServicio
     {
-        private readonly IRepositorioGenerico<Empleado> _repositorioEmpleado;
+        private readonly IRepositorioGenerico<Logeos> _repositorioLogeos;
         private readonly IJwtTokenServicio _jwtTokenServicio;
-        public JwtAutenticacionServicio(IRepositorioGenerico<Empleado> repositorioEmpleado, IJwtTokenServicio jwtTokenServicio)
+        public JwtAutenticacionServicio(IRepositorioGenerico<Logeos> repositorioLogeos, IJwtTokenServicio jwtTokenServicio)
         {
-            _repositorioEmpleado = repositorioEmpleado;
+            _repositorioLogeos = repositorioLogeos;
             _jwtTokenServicio = jwtTokenServicio;
         }
-        public async Task<string> Autenticacion(string usuario, string contrasena)
+        public async Task<string> Autenticacion(string logeo, string contrasena)
         {
-            var Empleado = await _repositorioEmpleado.ObtenerRegistroPorCondicion(x => x.Usuario == usuario && x.Contrasena == contrasena);
+            var usuario = await _repositorioLogeos.ObtenerRegistroPorCondicion(x => x.Logeo == logeo && x.Contrasena == contrasena);
 
-            if(Empleado== null)
+            if(usuario == null)
             {
                 throw new Exception("Error al Cargar Empleado. No se encontraron registros.");
             }
-            return await _jwtTokenServicio.GenerarToken(Empleado.IdEmpleado);
+            return await _jwtTokenServicio.GenerarToken(usuario.IdUsuario);
         }
 
         public async Task ValidarToken(string token)
