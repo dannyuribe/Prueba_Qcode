@@ -13,6 +13,11 @@ const routes = [
     component: () => import("@/views/Logeo/Logeo.vue"),
   },
   {
+    path: "/Registrar",
+    name: "RegistraLogeo",
+    component: () => import("@/views/Logeo/RegistraLogeo.vue"),
+  },
+  {
     path:'/Vehiculos/',  
     component: Base,
     children: [

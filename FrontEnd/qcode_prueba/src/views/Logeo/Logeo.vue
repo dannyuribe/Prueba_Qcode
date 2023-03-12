@@ -26,6 +26,12 @@
       </div>
       <button class="btn btn-primary" @click="IniciarSesion">Ingresar</button>
     </form>
+    <div>
+      <router-link 
+                :to="{ name: 'RegistraLogeo'}">
+                Registrar
+            </router-link>
+    </div>
   </div>
 </template>
 
