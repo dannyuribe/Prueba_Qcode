@@ -20,20 +20,16 @@
                     Registrar
             </button>
         </div>
-
-        <ValidarRegistroLogeoVue/>
     </div>
 </template>
 
 <script>
 import formularioUsuario from '@/components/FormularioUsuario.Component.vue';
-import ValidarRegistroLogeoVue from './ValidarRegistroLogeo.vue';
 
 export default {
     name: "RegistraLogeo",
     components: {
         formularioUsuario,
-        ValidarRegistroLogeoVue
     },
     data() {
         return {

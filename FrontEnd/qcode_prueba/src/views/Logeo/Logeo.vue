@@ -4,33 +4,24 @@
     <form class="contForm">
       <div class="form-group cont-padding">
         <label for="usuarioInput">Usuario</label>
-        <div class="contInput">       
-          <input
-            class="form-control"
-            type="text"
-            id="usuarioInput"
-            v-model="autenticar.correo"
-          />
+        <div class="contInput">
+          <input class="form-control" type="text" id="usuarioInput" v-model="autenticar.correo" />
         </div>
       </div>
       <div class="form-group cont-padding">
         <label for="contrasenaInput">Contraseña</label>
         <div class="contInput">
-          <input
-          class="form-control"
-          type="password"
-          id="contrasenaInput"
-          v-model="autenticar.contrasena"
-        />
-        </div>        
+          <input class="form-control" type="password" id="contrasenaInput" v-model="autenticar.contrasena" />
+        </div>
       </div>
-      <button class="btn btn-primary" @click="IniciarSesion">Ingresar</button>
+      <div class="contenedorBoton">
+        <button class="btn btn-primary" @click="IniciarSesion">Ingresar</button>
+      </div>
     </form>
-    <div>
-      <router-link 
-                :to="{ name: 'RegistraLogeo'}">
-                Registrar
-            </router-link>
+    <div class="contenedorBoton">
+      <router-link :to="{ name: 'RegistraLogeo' }">
+        Registrar
+      </router-link>
     </div>
   </div>
 </template>
@@ -57,7 +48,7 @@ export default {
           .append('contrasena', this.autenticar.contrasena);
 
         utilidades.PostArchivo(
-            `Autenticacion/Autenticar`,formData)
+          `Autenticacion/Autenticar`, formData)
           .then((respuesta) => {
             this.$emit("logeo-inicio", this.valor);
             window.localStorage.setItem("token", respuesta.data.token);
@@ -73,16 +64,16 @@ export default {
 </script>
 
 <style>
-.contForm{  
+.contForm {
   padding: 10px;
   text-align: center;
-  width: 200px;
+  width: 30%;
   margin: auto;
   border-radius: 10px;
   border: 2px solid white;
 }
-.contInput{
+
+.contInput {
   padding: 5px;
 }
-
 </style>
