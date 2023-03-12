@@ -37,7 +37,6 @@
 
 <script>
 import utilidades from "@/services/Axios";
-
 export default {
   name: "LogeoPrincipal",
   data() {
@@ -52,14 +51,16 @@ export default {
   methods: {
     IniciarSesion() {
       if (this.autenticar.usuario != "") {
-        const formData = new FormData();
-            formData.append('correo', this.autenticar.correo);
-            formData.append('contrasena', this.autenticar.contrasena);
+
+        const formData = new FormData()
+          .append('correo', this.autenticar.correo)
+          .append('contrasena', this.autenticar.contrasena);
+
         utilidades.PostArchivo(
             `Autenticacion/Autenticar`,formData)
           .then((respuesta) => {
             this.$emit("logeo-inicio", this.valor);
-            window.localStorage.setItem("token", respuesta.data.token.result);
+            window.localStorage.setItem("token", respuesta.data.token);
             this.$router.push({ path: "/" });
           })
           .catch((error) => {
@@ -78,7 +79,7 @@ export default {
   width: 200px;
   margin: auto;
   border-radius: 10px;
-  border: 2px solid black;
+  border: 2px solid white;
 }
 .contInput{
   padding: 5px;

@@ -18,9 +18,6 @@ export default {
       logeado:false
     }
   },
-  created() {
-    console.log("logeado: "+ this.logeado);
-  },
   methods: {
     valida(valor){
       console.log("Este-valor:"+valor);
@@ -29,3 +26,14 @@ export default {
   },
 };
 </script>
+
+<style>
+*{
+  background-color: rgb(85, 84, 84);
+  color: white;
+}
+.contenedorBoton{
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+</style>
