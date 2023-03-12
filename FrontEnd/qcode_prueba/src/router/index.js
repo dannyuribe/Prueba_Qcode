@@ -19,7 +19,7 @@ const routes = [
       {
         path: "registrar",
         name: "RegistraLogeo",
-        component: () => import("@/views/Logeo/RegistraLogeo.vue"),
+        component: () => import("@/views/Logeo/RegistroLogeo.vue"),
       },
       {
         path: "valida-registro",

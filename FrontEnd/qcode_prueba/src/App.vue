@@ -19,9 +19,8 @@ export default {
     }
   },
   methods: {
-    valida(valor){
-      console.log("Este-valor:"+valor);
-      this.logeado=valor;
+    valida(dato){
+      this.logeado=dato;
     }
   },
 };

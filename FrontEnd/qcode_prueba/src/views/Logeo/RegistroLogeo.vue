@@ -30,6 +30,8 @@ export default {
     name: "RegistraLogeo",
     components: {
         formularioUsuario,
+
+        
     },
     data() {
         return {
